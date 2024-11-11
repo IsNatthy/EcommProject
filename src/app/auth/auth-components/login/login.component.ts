@@ -44,20 +44,10 @@ export class LoginComponent {
 
     const username = this.loginForm.get('email')!.value;
     const password = this.loginForm.get('password')!.value;
-
-    this.authService.login(username, password).subscribe(
-      (res) => {
-        this.snackBar.open('Login Successful', 'SUCCESS', { duration: 5000 });
-      },
-      (error) => {
-        this.snackBar.open('Bad credentials', 'ERROR', { duration: 5000 });
-      }
-    ); 
-    /*
+ 
     this.authService.login(username, password).subscribe(
       (res) => {
         this.isSpinning = false;
-
 
         if (UserStorageService.isAdminLoggedIn()) {
           this.router.navigateByUrl('admin/dashboard');
@@ -82,6 +72,5 @@ export class LoginComponent {
         }
       }
     );
-    */
   }
 }
