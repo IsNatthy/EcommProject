@@ -52,4 +52,20 @@ export class DashboardComponent {
       this.isSpinning = false;
     });
   }
+
+  deleteProduct(productId: any): void {
+    this.adminService.deleteProductById(productId).subscribe((res) => {
+      if (res.body == null) {
+        this.snackBar.open('Product Deleted Successfully!', 'Close', {
+          duration: 5000
+        });
+        this.getAllProducts();
+      } else {
+        this.snackBar.open(res.message, 'Close', {
+          duration: 5000,
+          panelClass: 'error-snackbar'
+        });
+      }
+    });
+  }
 }

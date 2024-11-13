@@ -61,6 +61,16 @@ export class AdminService {
     );
   }
 
+  deleteProductById(productId: any): Observable<any> {
+    return this.http.delete<[]>(`${BASIC_URL}api/admin/product/${productId}`, {
+      headers: this.createAuthorizationHeader(),
+      observe: 'response'
+    }).pipe(
+      tap((_) => this.log('Product Deleted successfully')),
+      catchError(this.handleError<[]>('Error Deleting Product', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {

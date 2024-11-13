@@ -41,7 +41,7 @@
                         [routerLink]="'/admin/faq/' + product.id">FAQ</button>
                     <button mat-raised-button color="accent" class="update-button"
                         [routerLink]="'/admin/product/' + product.id">Update</button>
-                    <button mat-raised-button color="warn" class="delete-button">
+                    <button mat-raised-button color="warn" class="delete-button" (click)="deleteProduct(product.id)">
                         Delete
                     </button>
                 </div>
