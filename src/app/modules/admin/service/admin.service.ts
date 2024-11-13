@@ -52,6 +52,15 @@ export class AdminService {
     );
   }
 
+  getProductsByTitle(title: any): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/admin/search/${title}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Products fetched successfully')),
+      catchError(this.handleError<[]>('Error getting Products', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
