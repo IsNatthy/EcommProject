@@ -3,12 +3,19 @@ import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerComponent } from './customer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DemoAngularMaterialModule } from 'src/app/DemoAngularMaterialModule';
 
 @NgModule({
   declarations: [CustomerComponent, DashboardComponent],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    DemoAngularMaterialModule,
   ]
 })
 export class CustomerModule { }
