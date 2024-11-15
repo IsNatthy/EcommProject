@@ -41,4 +41,18 @@ export class CartItemsComponent {
     });
   }
 
+  applyCoupon(){
+    this.customerService.applyToken(this.couponForm.get(['code'])!.value).subscribe(res =>{
+      this.snackBar.open("Coupon Applied Successfully", 'Close', {
+        duration: 5000
+      });
+      this.getCart();
+    }, error => {
+      console.log(error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 5000
+      });
+    });
+  }
+
 }

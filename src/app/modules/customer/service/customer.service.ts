@@ -53,6 +53,13 @@ export class CustomerService {
     );
   }
 
+  applyToken(code: any): Observable<any> {
+    const userId = UserStorageService.getUserId();
+    return this.http.get(`${BASIC_URL}api/customer/coupon/${userId}/${code}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
