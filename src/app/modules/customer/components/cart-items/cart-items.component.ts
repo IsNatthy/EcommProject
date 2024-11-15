@@ -55,4 +55,20 @@ export class CartItemsComponent {
     });
   }
 
+  increaseQuantity(productId: any) {
+    console.log("increase", productId)
+    this.customerService.addPlusOnProduct(productId).subscribe(() => {
+      this.snackbar.open('Product quantity increased.', 'Close', { duration: 5000 });
+      this.getCart();
+    });
+  }
+
+  decreaseQuantity(productId: any) {
+    console.log("decrease", productId)
+    this.customerService.addMinusOnProduct(productId).subscribe(() => {
+      this.snackbar.open('Product quantity decreased.', 'Close', { duration: 5000 });
+      this.getCart();
+    });
+  }
+
 }

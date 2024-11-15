@@ -59,6 +59,32 @@ export class CustomerService {
       headers: this.createAuthorizationHeader(),
     });
   }
+  
+  addMinusOnProduct(productId: any): Observable<any> {
+    const quantityChangeProductDto = {
+      userId: UserStorageService.getUserId(),
+      productId: productId,
+    };
+    return this.http.post<[]>(`${BASIC_URL}api/customer/deduction`, quantityChangeProductDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Remove Product from Order successfully')),
+      catchError(this.handleError<[]>('Error removing Product from Order', []))
+    );
+  }
+
+  addPlusOnProduct(productId: any): Observable<any> {
+    const quantityChangeProductDto = {
+      userId: UserStorageService.getUserId(),
+      productId: productId,
+    };
+    return this.http.post<[]>(`${BASIC_URL}api/customer/addition`, quantityChangeProductDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Added Product into Order successfully')),
+      catchError(this.handleError<[]>('Error adding Product to Order', []))
+    );
+  }
 
   // Other methods
 
