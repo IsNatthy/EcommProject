@@ -43,6 +43,16 @@ export class CustomerService {
     );
   }
 
+  getCartByUserId(): Observable<any> {
+    const userId = UserStorageService.getUserId();
+    return this.http.get<[]>(`${BASIC_URL}api/customer/cart/${userId}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Cart fetched successfully')),
+      catchError(this.handleError<[]>('Error getting Cart', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
