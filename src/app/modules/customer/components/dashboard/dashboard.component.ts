@@ -50,4 +50,16 @@ export class DashboardComponent {
       this.isSpinning = false;
     });
   }
+
+  addToCart(productId: any) {
+    this.customerService.addToCart(productId).subscribe((res) => {
+      console.log(res);
+      if (res.id != null) {
+        this.snackBar.open("Product added to cart successfully", "Close", { duration: 5000 })
+      } else if (res.id == null) {
+        this.snackBar.open("Product already exist in the cart", "Close", { duration: 5000 })
+      }
+    });
+  }
+
 }
