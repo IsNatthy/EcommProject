@@ -71,6 +71,22 @@ export class AdminService {
     );
   }
 
+  addCoupon(categoryDto: any): Observable<any> {
+    console.log(categoryDto);
+    return this.http.post(`${BASIC_URL}api/admin/coupons`, categoryDto, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
+  getCoupons(): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/admin/coupons`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Category posted successfully')),
+      catchError(this.handleError<[]>('Error posting Category', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
