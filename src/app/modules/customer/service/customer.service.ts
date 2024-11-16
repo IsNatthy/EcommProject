@@ -86,6 +86,37 @@ export class CustomerService {
     );
   }
 
+  // Order service
+
+  placeOrder(quantityChangeProductDto: any): Observable<any> {
+    quantityChangeProductDto.userId = UserStorageService.getUserId();
+    return this.http.post<[]>(`${BASIC_URL}api/customer/placeOrder`, quantityChangeProductDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Order placed successfully')),
+      catchError(this.handleError<[]>('Error placing Order', []))
+    );
+  }
+
+  getMyOrdersByUserId(): Observable<any> {
+    const userId = UserStorageService.getUserId();
+    return this.http.get<[]>(`${BASIC_URL}api/customer/myOrders/${userId}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('My Orders fetched successfully')),
+      catchError(this.handleError<[]>('Error getting My Orders', []))
+    );
+  }
+
+  getOrderedProductsDetailsByOrderId(orderId: number): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/customer/ordered-products/${orderId}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Products fetched successfully')),
+      catchError(this.handleError<[]>('Error getting Products', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {

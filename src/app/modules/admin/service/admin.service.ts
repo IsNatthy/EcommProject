@@ -87,6 +87,26 @@ export class AdminService {
     );
   }
 
+  // Order service
+
+  getPlacedOrders(): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/admin/placedOrders`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Orders fetched successfully')),
+      catchError(this.handleError<[]>('Error getting Orders', []))
+    );
+  }
+
+  changeOrderStatus(orderId: number, status: string): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/admin/order/${orderId}/${status}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Order status changed successfully')),
+      catchError(this.handleError<[]>('Error changig Order status', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
