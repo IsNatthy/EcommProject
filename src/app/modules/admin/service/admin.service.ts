@@ -12,6 +12,8 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
+  // Category service
+  
   addCategory(categoryDto: any): Observable<any> {
     console.log(categoryDto);
     return this.http.post(`${BASIC_URL}api/admin/category`, categoryDto, {
@@ -24,6 +26,8 @@ export class AdminService {
       headers: this.createAuthorizationHeader(),
     });
   }
+
+  // Product service
 
   addProduct(productDto: any): Observable<any> {
     return this.http.post<[]>(`${BASIC_URL}api/admin/product`, productDto, {
@@ -70,6 +74,17 @@ export class AdminService {
       catchError(this.handleError<[]>('Error Deleting Product', []))
     );
   }
+
+  updateProduct(productId: any, productDto: any): Observable<any> {
+    return this.http.put<[]>(`${BASIC_URL}api/admin/product/${productId}`, productDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Product updated successfully')),
+      catchError(this.handleError<[]>('Error updating Product', []))
+    );
+  }
+
+  // Coupon service
 
   addCoupon(categoryDto: any): Observable<any> {
     console.log(categoryDto);
