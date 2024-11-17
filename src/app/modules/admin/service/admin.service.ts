@@ -107,6 +107,17 @@ export class AdminService {
     );
   }
 
+  // FAQ
+
+  postFAQ(productId: number, faqDto: any): Observable<any> {
+    return this.http.post<[]>(`${BASIC_URL}api/admin/faq/${productId}`, faqDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('FAQ posted successfully')),
+      catchError(this.handleError<[]>('Error posting FAQ', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
