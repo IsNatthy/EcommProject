@@ -133,6 +133,17 @@ export class AdminService {
     );
   }
 
+  // Analytics
+
+  getAnalytics(): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/admin/order/analytics`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Analytics Fetched successfully')),
+      catchError(this.handleError<[]>('Error Fetching Analytics', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
