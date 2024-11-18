@@ -10,9 +10,10 @@ import { CartItemsComponent } from './components/cart-items/cart-items.component
 import { OrderPlaceComponent } from './components/order-place/order-place.component';
 import { MyPlaceOrdersComponent } from './components/my-place-orders/my-place-orders.component';
 import { ViewOrderedProductsForReviewComponent } from './components/view-ordered-products-for-review/view-ordered-products-for-review.component';
+import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
 
 @NgModule({
-  declarations: [CustomerComponent, DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent],
+  declarations: [CustomerComponent, DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,

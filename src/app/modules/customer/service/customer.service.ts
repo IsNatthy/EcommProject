@@ -123,6 +123,18 @@ export class CustomerService {
     );
   }
 
+  // Review service
+
+  giveReview(reviewDto: any): Observable<any> {
+    console.log(reviewDto);
+    return this.http.post<[]>(`${BASIC_URL}api/customer/review`, reviewDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Review posted successfully')),
+      catchError(this.handleError<[]>('Error posting Review', []))
+    );
+  }  
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
