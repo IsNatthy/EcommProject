@@ -6,6 +6,7 @@ import { OrderPlaceComponent } from './components/order-place/order-place.compon
 import { MyPlaceOrdersComponent } from './components/my-place-orders/my-place-orders.component';
 import { ViewOrderedProductsForReviewComponent } from './components/view-ordered-products-for-review/view-ordered-products-for-review.component';
 import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
+import { ViewCompleteProductDetailComponent } from './components/view-complete-product-detail/view-complete-product-detail.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'my_orders', component: MyPlaceOrdersComponent, },
   { path: 'ordered_products/:orderId', component: ViewOrderedProductsForReviewComponent },
   { path: 'place-order', component: OrderPlaceComponent },
-  { path: 'review/:productId', component: ReviewOrderedProductComponent }
+  { path: 'review/:productId', component: ReviewOrderedProductComponent },
+  { path: 'product/:productId', component: ViewCompleteProductDetailComponent }
 ];
 
 @NgModule({

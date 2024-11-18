@@ -57,6 +57,15 @@ export class CustomerService {
     );
   }
 
+  getCompleteProductDetailById(productId: number): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/customer/product/${productId}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Product fetched successfully')),
+      catchError(this.handleError<[]>('Error getting Product', []))
+    );
+  }
+
   addMinusOnProduct(productId: any): Observable<any> {
     const quantityChangeProductDto = {
       userId: UserStorageService.getUserId(),
