@@ -144,6 +144,26 @@ export class CustomerService {
     );
   }  
 
+  // Wishlist service
+
+  addProductToWishlist(wishlistDto: any): Observable<any> {
+    return this.http.post<[]>(`${BASIC_URL}api/customer/wishlist`, wishlistDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Product added to wishlist successfully')),
+      catchError(this.handleError<[]>('Error adding product to wishlist', []))
+    );
+  }
+
+  getWishlistByUserId(): Observable<any> {
+    return this.http.get<[]>(`${BASIC_URL}api/customer/wishlist/${UserStorageService.getUserId()}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Wishlist fetched successfully')),
+      catchError(this.handleError<[]>('Error getting Wishlist', []))
+    );
+  }
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {

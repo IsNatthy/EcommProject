@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from '../../service/customer.service';
+import { UserStorageService } from 'src/app/auth/auth-services/storage-service/user-storage.service';
 
 @Component({
   selector: 'app-view-complete-product-detail',
@@ -43,5 +44,25 @@ export class ViewCompleteProductDetailComponent {
         });
       }
     );
+  }
+
+  addToWishlist(): void {
+    this.isSpinning = true;
+    const wishlistDto = {
+      productId: this.productId,
+      userId: UserStorageService.getUserId(),
+    }
+    this.customerService.addProductToWishlist(wishlistDto).subscribe((res) => {
+      this.isSpinning = false;
+      if (res.id != null) {
+        this.snackBar.open('Product Added to Wishlist Successfully!', 'Close', {
+          duration: 5000
+        });
+      } else {
+        this.snackBar.open("Already in Wishlist", 'ERROR', {
+          duration: 5000
+        });
+      }
+    });
   }
 }

@@ -7,6 +7,7 @@ import { MyPlaceOrdersComponent } from './components/my-place-orders/my-place-or
 import { ViewOrderedProductsForReviewComponent } from './components/view-ordered-products-for-review/view-ordered-products-for-review.component';
 import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
 import { ViewCompleteProductDetailComponent } from './components/view-complete-product-detail/view-complete-product-detail.component';
+import { GetMyWishlistComponent } from './components/get-my-wishlist/get-my-wishlist.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'ordered_products/:orderId', component: ViewOrderedProductsForReviewComponent },
   { path: 'place-order', component: OrderPlaceComponent },
   { path: 'review/:productId', component: ReviewOrderedProductComponent },
-  { path: 'product/:productId', component: ViewCompleteProductDetailComponent }
+  { path: 'product/:productId', component: ViewCompleteProductDetailComponent },
+  { path: 'wishlist', component: GetMyWishlistComponent },
 ];
 
 @NgModule({
