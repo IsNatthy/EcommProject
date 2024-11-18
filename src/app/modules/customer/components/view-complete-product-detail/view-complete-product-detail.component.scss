@@ -155,6 +155,9 @@
   .faq-card .answer-text {
     margin-left: 20px;
   }
-  
-  
-  
+
+  .heart-icon {
+    &.is-in-wishlist {
+      color: red;
+    }
+  }

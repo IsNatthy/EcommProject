@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap, catchError, of } from 'rxjs';
+import { Observable, tap, catchError, of, map } from 'rxjs';
 import { UserStorageService } from 'src/app/auth/auth-services/storage-service/user-storage.service';
 
 const BASIC_URL = 'http://localhost:8080/';
@@ -161,6 +161,12 @@ export class CustomerService {
     }).pipe(
       tap((_) => this.log('Wishlist fetched successfully')),
       catchError(this.handleError<[]>('Error getting Wishlist', []))
+    );
+  }
+
+  isProductInWishlist(productId: number): Observable<boolean> {
+    return this.getWishlistByUserId().pipe(
+      map(wishlist => wishlist.some(item => item.productId === productId))
     );
   }
 

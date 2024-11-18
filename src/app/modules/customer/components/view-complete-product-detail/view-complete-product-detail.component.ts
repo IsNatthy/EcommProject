@@ -17,6 +17,7 @@ export class ViewCompleteProductDetailComponent {
   product: any;
   FAQS: any[] = [];
   reviews: any[] = [];
+  isInWishlist: boolean = false;
 
   constructor(
     private snackBar: MatSnackBar,
@@ -26,6 +27,15 @@ export class ViewCompleteProductDetailComponent {
 
   ngOnInit(): void {
     this.getCompleteProductDetailById();
+    this.checkIfInWishlist();
+  }
+
+  checkIfInWishlist(): void {
+    this.customerService.isProductInWishlist(this.productId).subscribe(
+      isInWishlist => {
+        this.isInWishlist = isInWishlist;
+      }
+    );
   }
 
   getCompleteProductDetailById() {
@@ -47,22 +57,34 @@ export class ViewCompleteProductDetailComponent {
   }
 
   addToWishlist(): void {
+    if (this.isInWishlist) {
+      this.snackBar.open('Product is already in your wishlist', 'Close', {
+        duration: 5000
+      });
+      return;
+    }
     this.isSpinning = true;
     const wishlistDto = {
       productId: this.productId,
       userId: UserStorageService.getUserId(),
     }
-    this.customerService.addProductToWishlist(wishlistDto).subscribe((res) => {
-      this.isSpinning = false;
-      if (res.id != null) {
-        this.snackBar.open('Product Added to Wishlist Successfully!', 'Close', {
-          duration: 5000
-        });
-      } else {
-        this.snackBar.open("Already in Wishlist", 'ERROR', {
+    this.customerService.addProductToWishlist(wishlistDto).subscribe({
+      next: (res) => {
+        this.isSpinning = false;
+        if (res.id != null) {
+          this.isInWishlist = true;
+          this.snackBar.open('Product Added to Wishlist Successfully!', 'Close', {
+            duration: 5000
+          });
+        }
+      },
+      error: (error) => {
+        this.isSpinning = false;
+        this.snackBar.open("Error adding to wishlist", 'ERROR', {
           duration: 5000
         });
       }
     });
   }
+  
 }
