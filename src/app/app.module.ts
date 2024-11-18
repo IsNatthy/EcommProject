@@ -9,12 +9,14 @@ import { LoginComponent } from './auth/auth-components/login/login.component';
 import { SignupComponent } from './auth/auth-components/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TrackOrderComponent } from './auth/auth-components/track-order/track-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TrackOrderComponent
   ],
   imports: [
     BrowserModule,
