@@ -12,6 +12,8 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
+  // Product service
+
   getProductsByTitle(title: any): Observable<any> {
     return this.http.get<[]>(`${BASIC_URL}api/customer/search/${title}`, {
       headers: this.createAuthorizationHeader(),
@@ -29,6 +31,8 @@ export class CustomerService {
       catchError(this.handleError<[]>('Error getting Products', []))
     );
   }
+
+  // Cart service
 
   addToCart(productId: any): Observable<any> {
     const cartDto = {
@@ -53,13 +57,6 @@ export class CustomerService {
     );
   }
 
-  applyToken(code: any): Observable<any> {
-    const userId = UserStorageService.getUserId();
-    return this.http.get(`${BASIC_URL}api/customer/coupon/${userId}/${code}`, {
-      headers: this.createAuthorizationHeader(),
-    });
-  }
-  
   addMinusOnProduct(productId: any): Observable<any> {
     const quantityChangeProductDto = {
       userId: UserStorageService.getUserId(),
@@ -86,6 +83,15 @@ export class CustomerService {
     );
   }
 
+  // Coupon service
+  
+  applyToken(code: any): Observable<any> {
+    const userId = UserStorageService.getUserId();
+    return this.http.get(`${BASIC_URL}api/customer/coupon/${userId}/${code}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+  
   // Order service
 
   placeOrder(quantityChangeProductDto: any): Observable<any> {

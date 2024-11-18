@@ -9,9 +9,10 @@ import { DemoAngularMaterialModule } from 'src/app/DemoAngularMaterialModule';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { OrderPlaceComponent } from './components/order-place/order-place.component';
 import { MyPlaceOrdersComponent } from './components/my-place-orders/my-place-orders.component';
+import { ViewOrderedProductsForReviewComponent } from './components/view-ordered-products-for-review/view-ordered-products-for-review.component';
 
 @NgModule({
-  declarations: [CustomerComponent, DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent],
+  declarations: [CustomerComponent, DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,
