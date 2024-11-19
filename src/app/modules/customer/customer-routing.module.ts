@@ -8,6 +8,8 @@ import { ViewOrderedProductsForReviewComponent } from './components/view-ordered
 import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
 import { ViewCompleteProductDetailComponent } from './components/view-complete-product-detail/view-complete-product-detail.component';
 import { GetMyWishlistComponent } from './components/get-my-wishlist/get-my-wishlist.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'review/:productId', component: ReviewOrderedProductComponent },
   { path: 'product/:productId', component: ViewCompleteProductDetailComponent },
   { path: 'wishlist', component: GetMyWishlistComponent },
+  { path: 'change_password', component: ChangePasswordComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

@@ -13,9 +13,11 @@ import { ViewOrderedProductsForReviewComponent } from './components/view-ordered
 import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
 import { ViewCompleteProductDetailComponent } from './components/view-complete-product-detail/view-complete-product-detail.component';
 import { GetMyWishlistComponent } from './components/get-my-wishlist/get-my-wishlist.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
-  declarations: [CustomerComponent, DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent, ViewCompleteProductDetailComponent, GetMyWishlistComponent],
+  declarations: [CustomerComponent, DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent, ViewCompleteProductDetailComponent, GetMyWishlistComponent, ProfileComponent, ChangePasswordComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,

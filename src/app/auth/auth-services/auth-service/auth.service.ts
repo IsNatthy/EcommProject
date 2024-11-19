@@ -51,6 +51,35 @@ export class AuthService {
     return this.http.get<[]>(`${BASIC_URL}order/${trackingId}`)
   }
 
+  getUserById(): Observable<any> {
+    const userId = UserStorageService.getUserId();
+    return this.http.get<[]>(`${BASIC_URL}api/user/${userId}`, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('User Fetched successfully')),
+      catchError(this.handleError<[]>('Error Fetching User', []))
+    );
+  }
+
+  updateUser(data): Observable<any> {
+    return this.http.post<[]>(`${BASIC_URL}api/update`, data, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('User Updated successfully')),
+      catchError(this.handleError<[]>('Error Updating User', []))
+    );
+  } 
+
+  updatePassword(changePasswordDto: any): Observable<any> {
+    changePasswordDto.id = UserStorageService.getUserId();
+    return this.http.post<[]>(`${BASIC_URL}api/updatePassword`, changePasswordDto, {
+      headers: this.createAuthorizationHeader(),
+    }).pipe(
+      tap((_) => this.log('Password Updated successfully')),
+      catchError(this.handleError<[]>('Error Updating Password', []))
+    );
+  } 
+
   // Other methods
 
   private createAuthorizationHeader(): HttpHeaders {
