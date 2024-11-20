@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -20,7 +19,6 @@ import { OrderByStatusComponent } from './components/analytics/order-by-status/o
 
 @NgModule({
   declarations: [
-    AdminComponent,
     DashboardComponent,
     PostCategoryComponent,
     PostProductComponent,
