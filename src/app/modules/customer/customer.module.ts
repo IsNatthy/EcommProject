@@ -14,9 +14,10 @@ import { ViewCompleteProductDetailComponent } from './components/view-complete-p
 import { GetMyWishlistComponent } from './components/get-my-wishlist/get-my-wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { ImgDialogComponent } from './components/view-complete-product-detail/img-dialog/img-dialog.component';
 
 @NgModule({
-  declarations: [DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent, ViewCompleteProductDetailComponent, GetMyWishlistComponent, ProfileComponent, ChangePasswordComponent],
+  declarations: [DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent, ViewCompleteProductDetailComponent, GetMyWishlistComponent, ProfileComponent, ChangePasswordComponent, ImgDialogComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,

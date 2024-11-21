@@ -1,70 +1,222 @@
-.search-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+$error-color: #dc3545;
 
-    .search-input {
-        width: 100%;
-        max-width: 450px;
-        margin-bottom: 20px;
+// Variables de breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
 
-        mat-label {
-            font-size: 16px;
-        }
-
-        mat-icon {
-            font-size: 24px;
-        }
-
-        input {
-            font-size: 16px;
-        }
-
-        button {
-            font-size: 16px;
-        }
-    }
+// Mixins
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
 }
 
-.order-details-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    padding: 20px;
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
 
-    mat-card {
-        max-width: 500px;
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-
-        mat-card-header {
-            background-color: #3f51b5;
-            color: white;
-        }
-
-        mat-card-title {
-            font-size: 20px;
-        }
-
-        mat-card-content {
-            display: flex;
-            flex-direction: column;
-
-            .order-detail {
-                display: flex;
-                justify-content: space-between;
-                margin: 10px 0;
-
-                strong {
-                    font-weight: bold;
-                    flex-grow: 1;
-                    text-align: right;
-                }
-
-            }
-        }
+// Estilos del formulario de búsqueda
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: $background-light;
+  
+  .search-input {
+    width: 100%;
+    max-width: 450px;
+    
+    &.mat-form-field-appearance-outline {
+      .mat-form-field-outline {
+        color: $secondary-gray-light;
+      }
+      
+      &.mat-focused .mat-form-field-outline-thick {
+        color: $primary-color;
+      }
     }
+    
+    // Label
+    mat-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: $secondary-gray-light;
+    }
+    
+    // Input
+    .mat-input-element {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: $secondary-gray-dark;
+      
+      &::placeholder {
+        color: lighten($secondary-gray-light, 20%);
+      }
+    }
+    
+    // Botón de búsqueda
+    button[mat-button] {
+      color: $primary-color;
+      transition: all 0.3s ease;
+      
+      &:hover:not([disabled]) {
+        background-color: rgba($primary-color, 0.04);
+      }
+      
+      &[disabled] {
+        color: lighten($secondary-gray-light, 20%);
+      }
+      
+      mat-icon {
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+      }
+    }
+    
+    // Error
+    .mat-error {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.75rem;
+      color: $error-color;
+    }
+  }
+}
+
+// Contenedor de detalles del pedido
+.order-details-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: $background-light;
+  
+  @include mobile {
+    padding: 1rem;
+  }
+  
+  mat-card {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+    
+    // Encabezado
+    mat-card-header {
+      background-color: $primary-color;
+      margin: -1rem -1rem 1rem -1rem;
+      padding: 1.5rem;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      
+      mat-card-title {
+        color: $white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+    
+    // Contenido
+    mat-card-content {
+      padding: 1rem;
+      
+      .order-detail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-bottom: 1px solid rgba($secondary-gray-light, 0.1);
+        font-family: 'Roboto', sans-serif;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        // Label
+        &:first-child {
+          color: $secondary-gray-dark;
+          font-weight: 500;
+        }
+        
+        // Valor
+        strong {
+          font-weight: 500;
+          color: $secondary-gray-dark;
+          text-align: right;
+          margin-left: 1rem;
+        }
+        
+        @include mobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+          
+          strong {
+            margin-left: 0;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-details-container mat-card {
+  animation: fadeIn 0.4s ease-out;
+}
+
+// Estados de carga y error
+.mat-form-field-invalid {
+  .mat-form-field-outline {
+    color: $error-color !important;
+    opacity: 0.5;
+  }
+  
+  .mat-form-field-label {
+    color: $error-color !important;
+  }
+}
+
+// Estilos específicos para estados de pedido
+.order-detail strong {
+  &:contains("Pending") {
+    color: #ffc107;
+  }
+  &:contains("Delivered") {
+    color: #28a745;
+  }
+  &:contains("Cancelled") {
+    color: $error-color;
+  }
 }

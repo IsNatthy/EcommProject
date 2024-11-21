@@ -1,57 +1,150 @@
-.analytics-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .analytics-card {
-    width: 40%;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .analytics-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .metric-avatar {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 32px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .mat-card-title {
-    font-weight: bold;
-    font-size: 20px;
-    color: #333;
-  }
-  
-  .metric-value {
-    font-size: 36px;
-    color: #007bff;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
 
-  mat-card-title{
-    margin-top: 15px;
+// Variables de breakpoints
+$mobile: 576px;
+$tablet: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+.analytics-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: $background-light;
+  
+  @include tablet {
+    gap: 1rem;
   }
   
-  .metric-subtext {
-    font-size: 16px;
-    color: #999;
-    margin-top: 10px;
+  @include mobile {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.analytics-card {
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
   
-  .previous-month {
-    background-color: #f5f5f5;
-    margin-top: 10px;
+  mat-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba($secondary-gray-light, 0.1);
+    
+    .metric-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: $white;
+      background-color: $primary-color;
+      margin-right: 1rem;
+    }
+    
+    mat-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $secondary-gray-dark;
+      margin: 0;
+    }
   }
+  
+  mat-card-content {
+    padding: 1.5rem;
+    
+    .metric-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+      
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .metric-subtext {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.875rem;
+      color: $secondary-gray-light;
+    }
+    
+    &.previous-month {
+      background-color: rgba($background-light, 0.5);
+      margin-top: 0;
+      border-top: 1px solid rgba($secondary-gray-light, 0.1);
+      
+      .metric-value {
+        font-size: 1.5rem;
+        color: $secondary-gray-dark;
+        
+        @include mobile {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analytics-card {
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+  
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analytics-card {
+    animation: none;
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}

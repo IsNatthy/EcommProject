@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from '../../service/customer.service';
 import { UserStorageService } from 'src/app/auth/auth-services/storage-service/user-storage.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ImgDialogComponent } from './img-dialog/img-dialog.component';
 
 @Component({
   selector: 'app-view-complete-product-detail',
@@ -22,7 +24,8 @@ export class ViewCompleteProductDetailComponent {
   constructor(
     private snackBar: MatSnackBar,
     private customerService: CustomerService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -86,5 +89,14 @@ export class ViewCompleteProductDetailComponent {
       }
     });
   }
+  
+  openImageDialog(imageUrl: string): void {
+  this.dialog.open(ImgDialogComponent, {
+    data: { imageUrl },
+    maxWidth: '90vw',
+    maxHeight: '90vh',
+    panelClass: 'image-dialog'
+  });
+}
   
 }

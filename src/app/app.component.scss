@@ -1,29 +1,166 @@
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+
+// Variables de breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+// Importación de fuentes
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+// Mixins para responsive
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Estilos base de la navbar
+.mat-toolbar {
+  background-color: $white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto !important;
+  min-height: 64px;
+  padding: 0.5rem 1rem !important;
+  
+  @include mobile {
+    padding: 0.5rem !important;
+  }
+}
+
 .navbar {
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  
+  @include tablet {
+    justify-content: space-between;
+  }
 }
 
 .navbar-brand {
-    font-size: 20px;
-    font-weight: 600;
-    margin-right: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-right: 2rem;
+  white-space: nowrap;
+  
+  @include mobile {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+  }
 }
 
 .spacer {
-    flex: 1;
+  flex: 1;
+  
+  @include tablet {
+    display: none;
+  }
 }
 
-button {
-    color: white;
-    text-transform: uppercase;
-    margin-left: 8px;
+// Contenedor de botones
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  
+  @include tablet {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    &::-webkit-scrollbar {
+      height: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $secondary-gray-light;
+      border-radius: 3px;
+    }
+  }
 }
 
-button.active {
+// Estilos de botones
+button[mat-button] {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $secondary-gray-dark;
+  padding: 0.5rem 1rem;
+  min-width: auto;
+  line-height: 1;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: $primary-color;
+    background-color: rgba($primary-color, 0.04);
+  }
+  
+  &.active {
+    color: $primary-color;
     font-weight: 600;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background-color: $primary-color;
+    }
+  }
+  
+  @include mobile {
+    padding: 0.5rem;
+    font-size: 0.8125rem;
+  }
 }
 
-.custom-toolbar {
-    background-color: #ff0000;
+// Estilos específicos para el modo móvil del menú de administrador
+.admin-toolbar {
+  @include tablet {
+    .navbar-buttons {
+      justify-content: flex-start;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Aplicar animación a los elementos cuando aparecen
+.mat-toolbar {
+  animation: fadeIn 0.3s ease-out;
 }

@@ -1,8 +1,11 @@
 <!-- Product Section -->
 <div class="center-container" *ngIf="product">
     <div class="product-card">
-        <div class="product-image">
-            <img [src]="product.processedImg" alt="{{ product.name }} Image">
+        <div class="product-image-container">
+            <img [src]="product.processedImg" 
+                 (click)="openImageDialog(product.processedImg)"
+                 alt="{{ product.name }} Image"
+                 class="product-image">
         </div>
         <div class="product-details">
             <h2>{{ product.name }}</h2>
@@ -10,10 +13,9 @@
             <p class="price">Price: ${{ product.price }}</p>
             <p class="category">Category: {{ product.categoryName }}
                 <mat-icon (click)="addToWishlist()" 
-                class="heart-icon"
-                [ngClass]="{'is-in-wishlist': isInWishlist}"
-                style="cursor: pointer; margin-top: 10px;">
-                {{ isInWishlist ? 'favorite' : 'favorite_border' }}
+                    class="heart-icon"
+                    [ngClass]="{'is-in-wishlist': isInWishlist}">
+                    {{ isInWishlist ? 'favorite' : 'favorite_border' }}
                 </mat-icon>
             </p>
         </div>
@@ -21,17 +23,20 @@
 </div>
 
 <!-- Reviews Section -->
-<h1 class="section-heading" *ngIf="reviews.length >0">Customer Reviews</h1>
+<h1 class="section-heading" *ngIf="reviews.length > 0">Customer Reviews</h1>
 <div *ngIf="reviews" class="review-list">
     <div class="center-container">
         <div *ngFor="let review of reviews" class="review-card">
-            <div class="review-image">
-                <img [src]="review.processedImg" *ngIf="review.processedImg" alt="{{ review.description }} Image" class="small-image">
+            <div class="review-image-container" *ngIf="review.processedImg">
+                <img [src]="review.processedImg" 
+                     (click)="openImageDialog(review.processedImg)"
+                     alt="{{ review.description }} Image" 
+                     class="review-image">
             </div>
             <div class="review-details">
                 <h2>{{ review.description }}</h2>
                 <div class="details-row">
-                    <p class="rating">Rating: {{ review.rating }} -</p>
+                    <p class="rating">Rating: {{ review.rating }}</p>
                     <p class="username">Username: {{ review.username }}</p>
                 </div>
             </div>

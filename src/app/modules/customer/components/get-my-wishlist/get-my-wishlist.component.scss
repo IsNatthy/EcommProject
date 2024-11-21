@@ -1,50 +1,101 @@
+// Variables
+$primary-color: #2b7ca2;
+$text-primary: #323232;
+$text-secondary: #666666;
+$white: #FFFFFF;
+$border-color: #666666;
+$shadow-color: rgba(43, 124, 162, 0.1);
+$shadow-hover: rgba(43, 124, 162, 0.2);
+
+// Mixins
+@mixin card-shadow {
+  box-shadow: 0 2px 8px $shadow-color;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px $shadow-hover;
+    transform: translateY(-4px);
+  }
+}
+
+// Container styles
 .center-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+  background-color: $white;
+}
+
+// Product card styles
+.product-card {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  width: 300px;
+  padding: 24px;
+  text-align: left;
+  @include card-shadow;
+  
+  // Product image container
+  .product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
   }
   
-  /* Product card */
+  // Product details section
+  .product-details {
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+    
+    .description {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9rem;
+      color: $text-secondary;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    
+    .price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $primary-color;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// Media queries for responsiveness
+@media (max-width: 768px) {
   .product-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 280px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
+    width: calc(100% - 32px);
+    max-width: 400px;
   }
   
-  .product-card:hover {
-    transform: translateY(-5px);
+  .center-container {
+    padding: 16px;
   }
-  
-  /* Product image */
-  .product-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  /* Product details */
-  .product-details h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .product-details .description {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .product-details .price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #007bff;
-    margin-top: 10px;
-  }
-  
+}

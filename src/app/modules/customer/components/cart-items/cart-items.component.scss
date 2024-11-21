@@ -1,15 +1,26 @@
+// Variables de diseño
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$border-radius: 8px;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+$secondary-gray-dark: #323232;
+$border-color: rgba($secondary-gray-light, 0.1);
+
 .cart-container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 2rem auto 0; // Agregado margen superior para separar del navbar
     padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-family: 'Roboto', sans-serif;
+    background-color: $white;
 }
 
 .cart-item {
     padding: 8px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $border-color;
 }
 
 .product-info {
@@ -20,16 +31,16 @@
 .product-image {
     width: 120px;
     height: 120px;
-    border-radius: 8px;
+    border-radius: $border-radius;
     overflow: hidden;
     margin-right: 16px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
 
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .item-row {
@@ -41,13 +52,20 @@
 
 .item-name {
     flex: 2;
-    font-weight: bold;
-    color: #2196f3;
+    font-weight: 500;
+    color: $primary-color;
+    font-family: 'Montserrat', sans-serif;
+
+    &.highlight {
+        color: $primary-hover;
+    }
 }
 
 .item-price {
     flex: 1;
     margin-left: 16px;
+    color: $secondary-gray-dark;
+    font-weight: 500;
 }
 
 .quantity-controls {
@@ -55,17 +73,85 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
 
-.quantity {
-    margin: 0 8px;
+    button[mat-icon-button] {
+        color: $primary-color;
+
+        &:disabled {
+            color: rgba($secondary-gray-light, 0.5);
+        }
+    }
+
+    .quantity {
+        margin: 0 8px;
+        color: $secondary-gray-dark;
+    }
 }
 
 .total-price {
     text-align: right;
-    font-weight: bold;
+    font-weight: 500;
     margin-top: 16px;
-    color: #ff4081;
+    color: $secondary-gray-dark;
+
+    &:last-of-type {
+        color: $primary-color;
+        font-weight: 600;
+    }
+}
+
+// Sobrescribir estilos de Material
+:host ::ng-deep {
+    // Botones principales (Place Order y Apply Coupon)
+    .mdc-button--raised.mat-mdc-raised-button.mat-primary {
+        --mdc-protected-button-container-color: #{$primary-color};
+        --mdc-protected-button-container-hover-color: #{$primary-hover};
+        --mdc-protected-button-label-text-color: #{$white};
+        
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.875rem !important;
+        font-weight: 500 !important;
+        padding: 0.5rem 1.5rem !important;
+        border-radius: $border-radius !important;
+        transition: all 0.2s ease !important;
+        line-height: normal !important;
+        height: auto !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 200px !important;
+        margin: 16px auto 0 !important;
+        
+        .mdc-button__label {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        &:hover {
+            box-shadow: 0 2px 4px rgba($primary-color, 0.2) !important;
+        }
+
+        &:disabled {
+            background-color: rgba($secondary-gray-light, 0.12) !important;
+            color: rgba($secondary-gray-light, 0.6) !important;
+        }
+    }
+
+    // Botones de icono (quantity controls)
+    .mat-mdc-icon-button {
+        --mat-mdc-button-persistent-ripple-color: #{$primary-color};
+        --mat-mdc-button-ripple-color: #{rgba($primary-color, 0.1)};
+        
+        &.mat-primary {
+            color: $primary-color !important;
+            
+            .mat-icon {
+                font-size: 1.25rem !important;
+            }
+        }
+
+        &:disabled {
+            color: rgba($secondary-gray-light, 0.5) !important;
+        }
+    }
 }
 
 button.mat-raised-button {
@@ -73,19 +159,26 @@ button.mat-raised-button {
     width: 100%;
     max-width: 200px;
     margin: 16px auto 0;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: $border-radius;
+    transition: all 0.2s ease;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button.mat-raised-button:hover {
-    background-color: #1976d2;
-}
-
-button.mat-raised-button:focus {
-    outline: none;
+    
+    &:hover {
+        background-color: $primary-hover;
+        box-shadow: 0 2px 4px rgba($primary-color, 0.2);
+    }
+    
+    &:disabled {
+        background-color: rgba($secondary-gray-light, 0.12);
+        color: rgba($secondary-gray-light, 0.6);
+    }
 }
 
 .empty-cart {
@@ -94,33 +187,44 @@ button.mat-raised-button:focus {
     align-items: center;
     justify-content: center;
     height: 300px;
+    margin-top: 2rem;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    
+    mat-icon {
+        font-size: 48px;
+        color: $secondary-gray-light;
+        margin-bottom: 16px;
+    }
 
     span {
         font-size: 18px;
-        color: #616161;
+        color: $secondary-gray-light;
         margin-top: 10px;
+        font-family: 'Montserrat', sans-serif;
     }
 }
-
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     mat-form-field {
+        width: 100%;
         margin-bottom: 20px;
 
         .mat-form-field-wrapper {
-            border-radius: 4px;
-            border: 1px solid #ccc;
+            padding-bottom: 0;
         }
 
         .mat-form-field-outline {
-            border-width: 1px;
+            color: rgba($secondary-gray-light, 0.2);
         }
 
         .mat-input-element {
-            color: #3f51b5;
+            color: $secondary-gray-dark;
         }
     }
 
@@ -131,19 +235,70 @@ form {
 
 .container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
 }
 
-
+// Mejoras de accesibilidad y responsive
 @media (max-width: 600px) {
-.container {
-    padding: 10px;
+    .cart-container,
+    .container {
+        margin: 1rem;
+        padding: 16px;
+    }
+
+    .product-info {
+        flex-direction: column;
+        text-align: center;
+
+        .product-image {
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+    .item-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        .item-name,
+        .item-price {
+            margin: 0;
+            text-align: center;
+        }
+
+        .quantity-controls {
+            justify-content: center;
+        }
+    }
 
     form {
-        mat-form-field {
-            margin-bottom: 10px;
+        button {
+            width: 100%;
         }
     }
 }
+
+// Soporte para preferencias de reducción de movimiento
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+// Mejoras de alto contraste
+@media (forced-colors: active) {
+    button.mat-raised-button {
+        border: 2px solid ButtonText;
+    }
+    
+    .item-name,
+    .item-price,
+    .total-price {
+        color: CanvasText;
+    }
 }

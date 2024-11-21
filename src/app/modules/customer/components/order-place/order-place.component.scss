@@ -1,83 +1,166 @@
+// Variables de diseño
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+$danger-color: #dc3545;
+$danger-hover: #c82333;
+
 .container {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 mat-card {
     width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: $white;
+    border: 1px solid rgba($secondary-gray-light, 0.1);
+    
+    mat-card-title {
+        display: flex;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $secondary-gray-dark;
+        padding: 1.5rem 1rem;
+        border-bottom: 1px solid rgba($secondary-gray-light, 0.1);
+    }
+    
+    mat-card-content {
+        padding: 1.5rem;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            
+            mat-form-field {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                
+                &.mat-focused .mat-form-field-outline {
+                    color: $primary-color;
+                }
+                
+                .mat-form-field-wrapper {
+                    padding-bottom: 0;
+                }
+                
+                .mat-form-field-outline {
+                    color: rgba($secondary-gray-light, 0.2);
+                }
+                
+                input {
+                    font-size: 1rem;
+                    color: $secondary-gray-dark;
+                    
+                    &::placeholder {
+                        color: rgba($secondary-gray-light, 0.8);
+                    }
+                }
+                
+                mat-error {
+                    color: $danger-color;
+                    font-size: 0.875rem;
+                    margin-top: 0.25rem;
+                }
+            }
+            
+            .button-row {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-top: 1.5rem;
+                
+                button {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 4px;
+                    text-transform: none;
+                    letter-spacing: 0.25px;
+                    transition: all 0.2s ease;
+                    
+                    &.order-button {
+                        flex: 0.6;
+                        background-color: $primary-color !important;
+                        color: $white !important;
+                        border: none;
+                        box-shadow: none;
+                        
+                        &:hover:not(:disabled) {
+                            background-color: $primary-hover !important;
+                            box-shadow: 0 2px 4px rgba($primary-color, 0.2);
+                        }
+                        
+                        &:disabled {
+                            background-color: rgba($secondary-gray-light, 0.12) !important;
+                            color: rgba($secondary-gray-light, 0.38) !important;
+                        }
+                    }
+                    
+                    &.close-button {
+                        flex: 0.3;
+                        border: 1px solid $danger-color !important;
+                        color: $danger-color !important;
+                        background-color: transparent !important;
+                        
+                        &:hover {
+                            background-color: rgba($danger-color, 0.04) !important;
+                            border-color: $danger-hover !important;
+                            color: $danger-hover !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-mat-card-title {
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+// Soporte para preferencias de reducción de movimiento
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none !important;
+    }
 }
 
-mat-card-content {
-    padding: 16px;
-}
-
-mat-form-field {
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-input {
-    font-size: 16px;
-}
-
-button {
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #2c387e;
-}
-
-mat-error {
-    color: #f44336;
-    font-size: 14px;
-}
-
-.button-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 24px;
-}
-
-.order-button {
-    flex: 0.6;
-    background-color: #3f51b5;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 24px;
-    cursor: pointer;
-}
-
-.order-button:hover {
-    background-color: #2c387e;
-}
-
-.close-button {
-    flex: 0.3;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    padding: 12px 24px;
-}
-
-.close-button:hover {
-    color: #2c387e;
+// Media queries para responsividad
+@media (max-width: 480px) {
+    mat-card {
+        width: 100%;
+        margin: 1rem;
+        border-radius: 4px;
+        
+        mat-card-title {
+            font-size: 1.25rem;
+            padding: 1rem;
+        }
+        
+        mat-card-content {
+            padding: 1rem;
+            
+            .button-row {
+                flex-direction: column;
+                gap: 0.75rem;
+                
+                button {
+                    flex: none;
+                    width: 100%;
+                    
+                    &.order-button,
+                    &.close-button {
+                        padding: 0.625rem 1rem;
+                    }
+                }
+            }
+        }
+    }
 }

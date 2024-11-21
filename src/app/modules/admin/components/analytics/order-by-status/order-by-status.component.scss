@@ -1,47 +1,136 @@
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+
+// Variables de estado específicas
+$placed-color: #ffc107;    // Amarillo para pedidos nuevos
+$shipped-color: #17a2b8;   // Azul para pedidos enviados
+$delivered-color: #28a745; // Verde para pedidos entregados
+
+// Variables de breakpoints
+$mobile: 576px;
+$tablet: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
 .order-status-container {
-    display: flex;
-    justify-content: space-between; 
-    margin-bottom: 20px; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: $background-light;
+  
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
   }
   
+  @include mobile {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.order-status-card {
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba($secondary-gray-light, 0.1);
+    
+    .status-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: $white;
+      margin-right: 1rem;
+      
+      // Colores específicos para cada estado
+      &:contains("P") { background-color: $placed-color; }
+      &:contains("S") { background-color: $shipped-color; }
+      &:contains("D") { background-color: $delivered-color; }
+    }
+    
+    mat-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $secondary-gray-dark;
+      margin: 0;
+    }
+  }
+  
+  mat-card-content {
+    padding: 1.5rem;
+    
+    .status-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary-color;
+      text-align: center;
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-status-card {
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+  
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   .order-status-card {
-    width: 32%;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    margin-right: 20px;
+    animation: none;
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
   }
-  
-  .order-status-card:last-child {
-    margin-right: 0;
-  }
-  
-  .order-status-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .status-avatar {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 32px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .mat-card-title {
-    font-weight: bold;
-    font-size: 20px;
-    color: #333;
-  }
-  
-  .status-value {
-    font-size: 36px;
-    color: #007bff;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
+}

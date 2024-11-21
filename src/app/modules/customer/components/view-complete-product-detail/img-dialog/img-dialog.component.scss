@@ -1,0 +1,12 @@
+.image-dialog-container {
+    padding: 16px;
+    cursor: pointer;
+    
+    img {
+      max-width: 100%;
+      max-height: 80vh;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+  }

@@ -1,50 +1,232 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 90px;
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+$error-color: #dc3545;
 
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #3f51b5;
-    }
+// Variables de breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
 
-    form {
-        display: flex;
-        flex-direction: column;
-
-        mat-form-field {
-            margin-bottom: 20px;
-
-            .mat-form-field-wrapper {
-                border-radius: 4px;
-                border: 1px solid #ccc;
-            }
-
-            .mat-form-field-outline {
-                border-width: 1px;
-            }
-
-            .mat-input-element {
-                color: #3f51b5;
-            }
-        }
-
-        button {
-            align-self: center;
-        }
-    }
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
 
-        form {
-            mat-form-field {
-                margin-bottom: 10px;
-            }
-        }
+// Mixin para appearance
+@mixin appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+// Contenedor principal
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  @include mobile {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  // Título
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    @include mobile {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
     }
+  }
+}
+
+// Spinner
+mat-spinner {
+  margin: 2rem auto;
+  
+  ::ng-deep circle {
+    stroke: $primary-color !important;
+  }
+}
+
+// Formulario
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  &.spinner-active {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  // Campos del formulario
+  mat-form-field {
+    width: 100%;
+    
+    .mat-form-field-wrapper {
+      @include appearance-none;
+    }
+    
+    &.mat-form-field-appearance-outline {
+      // Outline normal
+      .mat-form-field-outline {
+        color: rgba($secondary-gray-light, 0.2);
+      }
+      
+      // Outline en focus
+      &.mat-focused .mat-form-field-outline-thick {
+        color: $primary-color;
+      }
+      
+      // Outline en error
+      &.mat-form-field-invalid .mat-form-field-outline {
+        color: $error-color;
+        opacity: 0.5;
+      }
+    }
+    
+    // Label y hint
+    .mat-form-field-label, .mat-hint {
+      font-family: 'Roboto', sans-serif;
+      color: $secondary-gray-light;
+    }
+    
+    // Input y Datepicker
+    .mat-input-element {
+      font-family: 'Roboto', sans-serif;
+      color: $secondary-gray-dark;
+      @include appearance-none;
+      
+      &::placeholder {
+        color: lighten($secondary-gray-light, 20%);
+      }
+      
+      // Estilo específico para input numérico
+      &[type="number"] {
+        @include appearance-none;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          @include appearance-none;
+          margin: 0;
+        }
+      }
+    }
+    
+    // Datepicker toggle
+    .mat-datepicker-toggle {
+      color: $secondary-gray-light;
+      
+      button {
+        @include appearance-none;
+      }
+      
+      &.mat-focused {
+        color: $primary-color;
+      }
+    }
+    
+    // Mensajes de error
+    .mat-error {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.75rem;
+      color: $error-color;
+      margin-top: 0.25rem;
+    }
+  }
+  
+  // Botón de submit
+  button[mat-raised-button] {
+    @include appearance-none;
+    align-self: center;
+    min-width: 200px;
+    padding: 0.75rem 2rem;
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: $primary-hover;
+      box-shadow: 0 4px 8px rgba($primary-color, 0.2);
+    }
+    
+    &:disabled {
+      background-color: rgba($secondary-gray-light, 0.12);
+      color: rgba($secondary-gray-light, 0.6);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+    
+    @include mobile {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+// Soporte para preferencias de reducción de movimiento
+@media (prefers-reduced-motion: reduce) {
+  .container {
+    animation: none;
+  }
+  
+  form button {
+    transition: none;
+  }
+}
+
+// Fix para el autocompletado de Chrome
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $white inset !important;
+  -webkit-text-fill-color: $secondary-gray-dark !important;
+  @include appearance-none;
 }

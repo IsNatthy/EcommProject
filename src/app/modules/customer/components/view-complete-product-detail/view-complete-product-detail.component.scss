@@ -1,163 +1,248 @@
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+$error-color: #dc3545;
+
+// Variables de espaciado y bordes
+$spacing-unit: 1rem;
+$border-radius: 8px;
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+// Contenedor principal
 .center-container {
-    max-width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-unit * 2;
+  
+  @media (max-width: 768px) {
+    padding: $spacing-unit;
+  }
+}
+
+// Product card
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-unit * 2;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-md;
+  padding: $spacing-unit * 2;
+  margin-bottom: $spacing-unit * 2;
+  overflow: hidden;
+  
+  .product-image-container {
+    width: 80%;
     margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Product card */
-  .product-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .product-card .product-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .product-card h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .product-card .description {
-    font-size: 18px;
-    color: #555;
-  }
-  
-  .product-card .price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #007bff;
-    margin-top: 10px;
-  }
-  
-  .product-card .category {
-    font-size: 16px;
-    color: #777;
-    margin-top: 10px;
-  }
-  
-  .product-card .heart-icon {
-    font-size: 24px;
-    color: #ff4081;
     cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  /* Reviews card */
-  .review-list {
-    margin-top: 30px;
-  }
-  
-  .review-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    display: flex;
-  }
-  
-  .review-card .review-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .review-card h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .review-card .details-row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .review-card .rating,
-  .review-card .username {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  /* FAQs card */
-  .faq-list {
-    margin-top: 30px;
-  }
-  
-  .faq-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-  
-  .faq-card .details-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .faq-card .question,
-  .faq-card .answer {
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-  }
-
-
-  /* Heading Styles */
-.section-heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 20px 0;
-    color: #333;
-    text-align: center;
-  }
-  
-  .small-image {
-    max-width: 80px; 
-    max-height: 60px; 
-  }
-  
-  /* FAQs Styling */
-  .faq-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-  
-  .faq-card .faq-details {
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .faq-card .question {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .faq-card .question-text,
-  .faq-card .answer-text {
-    margin-left: 20px;
-  }
-
-  .heart-icon {
-    &.is-in-wishlist {
-      color: red;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+    
+    .product-image {
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: $border-radius;
     }
   }
+  
+  .product-details {
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      color: $secondary-gray-dark;
+      margin-bottom: $spacing-unit;
+    }
+    
+    .description {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: $secondary-gray-light;
+      margin-bottom: $spacing-unit;
+      line-height: 1.6;
+    }
+    
+    .price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      color: $primary-color;
+      font-weight: 600;
+      margin-bottom: $spacing-unit;
+    }
+    
+    .category {
+      display: flex;
+      align-items: center;
+      gap: $spacing-unit;
+      color: $secondary-gray-light;
+      
+      .heart-icon {
+        color: $secondary-gray-light;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+        
+        &.is-in-wishlist {
+          color: $error-color;
+        }
+      }
+    }
+  }
+}
+
+// Reviews section
+.section-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: $secondary-gray-dark;
+  text-align: center;
+  margin: $spacing-unit * 2 0;
+}
+
+.review-card {
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  padding: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit;
+  display: flex;
+  gap: $spacing-unit;
+  
+  .review-image-container {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    .review-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: $border-radius;
+    }
+  }
+  
+  .review-details {
+    flex: 1;
+    
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: $secondary-gray-dark;
+      margin-bottom: $spacing-unit * 0.5;
+    }
+    
+    .details-row {
+      display: flex;
+      gap: $spacing-unit;
+      color: $secondary-gray-light;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// FAQs section
+.faq-list {
+  margin-top: $spacing-unit * 3;
+}
+
+.faq-card {
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  padding: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit;
+  
+  .faq-details {
+    .question, .answer {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: $secondary-gray-dark;
+      margin-bottom: $spacing-unit * 0.5;
+    }
+    
+    .question-text, .answer-text {
+      font-family: 'Roboto', sans-serif;
+      color: $secondary-gray-light;
+      margin-left: $spacing-unit * 1.5;
+      margin-bottom: $spacing-unit;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Dialog para imágenes ampliadas
+.image-dialog {
+  .mat-dialog-container {
+    padding: 0;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+  }
+}
+
+// Animaciones y media queries
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card,
+.review-card,
+.faq-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .review-card,
+  .faq-card {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    grid-template-columns: 1fr;
+    
+    .product-image-container {
+      width: 100%;
+      
+      .product-image {
+        max-height: 300px;
+      }
+    }
+  }
+  
+  .review-card,
+  .faq-card {
+    padding: $spacing-unit;
+  }
+  
+  .section-heading {
+    font-size: 1.25rem;
+  }
+}

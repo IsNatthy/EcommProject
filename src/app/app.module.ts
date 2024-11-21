@@ -10,13 +10,15 @@ import { SignupComponent } from './auth/auth-components/signup/signup.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TrackOrderComponent } from './auth/auth-components/track-order/track-order.component';
+import { AboutUsComponent } from './auth/auth-components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    TrackOrderComponent
+    TrackOrderComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

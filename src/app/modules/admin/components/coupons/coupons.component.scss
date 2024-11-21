@@ -1,48 +1,214 @@
+// Variables de colores según la paleta
+$primary-color: #2b7ca2;
+$primary-hover: #256a8e;
+$secondary-gray-light: #666666;
+$secondary-gray-dark: #323232;
+$white: #FFFFFF;
+$background-light: #F8F9FA;
+
+// Variables específicas para la tabla
+$header-bg: rgba($primary-color, 0.05);
+$row-hover: rgba($primary-color, 0.02);
+$border-color: rgba($secondary-gray-light, 0.1);
+
+// Variables de breakpoints
+$mobile: 576px;
+$tablet: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Contenedor principal
 .container {
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
+  padding: 1.5rem;
+  background-color: $background-light;
+  min-height: calc(100vh - 64px); // Ajusta según la altura de tu navbar
+  
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+// Estilos de la tarjeta
+mat-card {
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  
+  mat-card-content {
+    padding: 0; // Elimina el padding para la tabla
+  }
+}
+
+// Estilos de la tabla
+.mat-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: $white;
+  
+  // Encabezados
+  .mat-header-row {
+    background-color: $header-bg;
+    border-bottom: 1px solid $border-color;
+  }
+  
+  .mat-header-cell {
+    font-family: 'Montserrat', sans-serif;
+    color: $primary-color;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba($primary-color, 0.1);
+    
+    &:first-child {
+      padding-left: 1.5rem;
+    }
+    
+    &:last-child {
+      padding-right: 1.5rem;
+    }
+  }
+  
+  // Celdas
+  .mat-cell {
+    font-family: 'Roboto', sans-serif;
+    color: $secondary-gray-dark;
+    font-size: 0.875rem;
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+    
+    &:first-child {
+      padding-left: 1.5rem;
+    }
+    
+    &:last-child {
+      padding-right: 1.5rem;
+    }
+    
+    // Estilos específicos para celdas con clase bold-cell
+    &.bold-cell {
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+  
+  // Filas
+  .mat-row {
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: $row-hover;
+    }
+    
+    &:last-child {
+      .mat-cell {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  // Estilos responsivos
+  @include tablet {
+    .mat-header-cell,
+    .mat-cell {
+      padding: 0.75rem;
+      
+      &:first-child {
+        padding-left: 1rem;
+      }
+      
+      &:last-child {
+        padding-right: 1rem;
+      }
+    }
+  }
+  
+  @include mobile {
+    // Ajustes para visualización horizontal en móvil
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: $background-light;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($primary-color, 0.2);
+      border-radius: 4px;
+    }
+  }
+}
+
+// Estilos del paginador
+.mat-paginator {
+  background-color: $background-light;
+  border-top: 1px solid $border-color;
+  
+  .mat-paginator-container {
+    min-height: 48px;
+    padding: 0 1.5rem;
+    
+    @include mobile {
+      padding: 0 1rem;
+    }
+  }
+  
+  .mat-paginator-page-size-label,
+  .mat-paginator-range-label {
+    font-family: 'Roboto', sans-serif;
+    color: $secondary-gray-dark;
+  }
+  
+  .mat-paginator-navigation-button {
+    color: $primary-color;
+    
+    &:disabled {
+      color: rgba($secondary-gray-light, 0.5);
+    }
+  }
+}
+
+// Animación de entrada
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 mat-card {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
 }
 
-table {
-    width: 100%;
-}
-
-th.mat-header-cell {
-    font-weight: bolder;
-    color: #003973;
-    padding: 10px;
-}
-
-td.mat-cell,
-td.bold-cell {
-    padding: 10px;
-}
-
-td.bold-cell {
-    font-weight: bold;
-}
-
-.mat-elevation-z8 {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.mat-row:hover {
-    background-color: #f5f5f5;
-}
-
-.mat-header-row {
-    background-color: #f0f0f0;
-}
-
-.mat-paginator {
-    background-color: #f0f0f0;
-    border-radius: 0 0 10px 10px;
-    margin-top: 16px;
+// Soporte para preferencias de reducción de movimiento
+@media (prefers-reduced-motion: reduce) {
+  mat-card {
+    animation: none;
+  }
+  
+  .mat-row {
+    transition: none;
+  }
 }

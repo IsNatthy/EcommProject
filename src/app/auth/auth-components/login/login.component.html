@@ -12,19 +12,11 @@
                     </mat-error>
                 </mat-form-field>
 
-                <!-- <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password" formControlName="password" placeholder="Password" required>
-                    <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
-                        Please enter a valid password.
-                    </mat-error>
-                </mat-form-field> -->
-
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
                     <input matInput type="{{ hidePassword ? 'password' : 'text' }}" formControlName="password"
                         placeholder="Password" required>
-                    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" aria-label="Toggle password visibility">
                         <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
                     <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
@@ -33,11 +25,11 @@
                 </mat-form-field>
 
                 <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid"
-                    (click)="onSubmit()">Login</button>
+                    (click)="onSubmit()" aria-label="Login">Login</button>
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button color="accent" routerLink="/signup">Don't have an account? Sign Up</button>
+            <button mat-button color="accent" routerLink="/signup" aria-label="Sign Up">Don't have an account? Sign Up</button>
         </mat-card-actions>
     </mat-card>
 </div>
