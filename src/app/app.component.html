@@ -1,7 +1,11 @@
 <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
+    <div class="brand-container">
+      <img src="assets/logo.png" alt="Creart Logo" class="navbar-logo">
       <span class="navbar-brand">Creart Acabados</span>
-      <span class="spacer"></span>
+    </div>
+    <span class="spacer"></span>
+      <button mat-button routerLink="/about-us" routerLinkActive="active">About Us</button>
       <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
       <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
       <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
@@ -9,7 +13,10 @@
 </div>
 <div *ngIf="isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
+    <div class="brand-container">
+      <img src="assets/logo.png" alt="Creart Logo" class="navbar-logo">
       <span class="navbar-brand">Creart Acabados</span>
+    </div>
       <span class="spacer"></span>
       <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
       <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
@@ -23,8 +30,12 @@
 </div>
 <div *ngIf="isCustomerLoggedIn">
   <mat-toolbar color="primary" class="navbar">
+    <div class="brand-container">
+      <img src="assets/logo.png" alt="Creart Logo" class="navbar-logo">
       <span class="navbar-brand">Creart Acabados</span>
-      <span class="spacer"></span>
+    </div>
+    <span class="spacer"></span>
+      <button mat-button routerLink="/about-us" routerLinkActive="active">About Us</button>
       <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
       <button mat-button routerLink="/customer/cart" routerLinkActive="active">Cart</button>
       <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Orders</button>

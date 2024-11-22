@@ -1,4 +1,4 @@
-// Variables de colores según la paleta
+// Variables de colores
 $primary-color: #2b7ca2;
 $primary-hover: #256a8e;
 $secondary-gray-light: #666666;
@@ -163,4 +163,15 @@ button[mat-button] {
 // Aplicar animación a los elementos cuando aparecen
 .mat-toolbar {
   animation: fadeIn 0.3s ease-out;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
 }

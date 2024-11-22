@@ -1,10 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CustomerService } from 'src/app/modules/customer/service/customer.service';
+import { UserStorageService } from '../../auth-services/storage-service/user-storage.service';
 
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.scss']
 })
-export class AboutUsComponent {
+export class AboutUsComponent implements OnInit {
+  isCustomerLoggedIn = false;
 
+  products = [
+    {
+      image: 'assets/celosia.jpg',
+      title: 'Decorative Lattices',
+      description: 'Custom-designed lattices for elegant space division'
+    },
+    {
+      image: 'assets/maceta.jpg',
+      title: 'Modern Planters',
+      description: 'Stylish planters for indoor and outdoor spaces'
+    },
+    {
+      image: 'assets/jarron.jpg',
+      title: 'Artisanal Flowerpots',
+      description: 'Unique handcrafted pots for your botanical collection'
+    },
+    {
+      image: 'assets/tabla.jpg',
+      title: 'Wooden Boards',
+      description: 'Premium crafted wooden boards for serving and decoration'
+    }
+  ];
+
+  constructor(private userStorageService: UserStorageService  ) {}
+
+  ngOnInit() {
+    this.isCustomerLoggedIn = UserStorageService.isCustomerLoggedIn();
+  }
 }
