@@ -1,22 +1,20 @@
-<div class="container">
-    <h2>Post FAQ</h2>
+<div class="container"> 
+    <h2>{{ 'POST_FAQ.TITLE' | translate }}</h2>
     <mat-spinner *ngIf="isSpinning"></mat-spinner>
     <form [formGroup]="FAQForm" (ngSubmit)="postFAQ()" [class.spinner-active]="isSpinning">
 
         <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Question</mat-label>
-            <textarea matInput placeholder="Question" formControlName="question"></textarea>
-            <mat-error *ngIf="FAQForm.get('question')?.hasError('required')">This Input Is
-                Required!</mat-error>
+            <mat-label>{{ 'POST_FAQ.QUESTION_LABEL' | translate }}</mat-label>
+            <textarea matInput placeholder="{{ 'POST_FAQ.QUESTION_PLACEHOLDER' | translate }}" formControlName="question"></textarea>
+            <mat-error *ngIf="FAQForm.get('question')?.hasError('required')">{{ 'POST_FAQ.REQUIRED_ERROR' | translate }}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Answer</mat-label>
-            <textarea matInput placeholder="Answer" formControlName="answer"></textarea>
-            <mat-error *ngIf="FAQForm.get('answer')?.hasError('required')">This Input Is
-                Required!</mat-error>
+            <mat-label>{{ 'POST_FAQ.ANSWER_LABEL' | translate }}</mat-label>
+            <textarea matInput placeholder="{{ 'POST_FAQ.ANSWER_PLACEHOLDER' | translate }}" formControlName="answer"></textarea>
+            <mat-error *ngIf="FAQForm.get('answer')?.hasError('required')">{{ 'POST_FAQ.REQUIRED_ERROR' | translate }}</mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">Post FAQ</button>
+        <button mat-raised-button color="primary" type="submit">{{ 'POST_FAQ.POST_BUTTON' | translate }}</button>
     </form>
 </div>

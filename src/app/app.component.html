@@ -1,47 +1,103 @@
 <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
     <div class="brand-container">
-      <img src="assets/logo.png" alt="Creart Logo" class="navbar-logo">
+      <img src="assets/img/logo.png" alt="Creart Logo" class="navbar-logo">
       <span class="navbar-brand">Creart Acabados</span>
     </div>
     <span class="spacer"></span>
-      <button mat-button routerLink="/about-us" routerLinkActive="active">About Us</button>
-      <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
-      <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
-      <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+    <div class="nav-items">
+      <button mat-button routerLink="/about-us" routerLinkActive="active">{{ 'NAV.ABOUT_US' | translate }}</button>
+      <button mat-button routerLink="/order" routerLinkActive="active">{{ 'NAV.TRACK_ORDER' | translate }}</button>
+      <button mat-button routerLink="/signup" routerLinkActive="active">{{ 'NAV.REGISTER' | translate }}</button>
+      <button mat-button routerLink="/login" routerLinkActive="active">{{ 'NAV.LOGIN' | translate }}</button>
+      <mat-form-field class="language-select">
+        <mat-select [value]="getCurrentLanguage()" (selectionChange)="setLanguage($event.value)">
+          <mat-select-trigger>
+            <div class="language-option">
+              <img [src]="'assets/flags/' + getCurrentLanguage() + '.svg'" [alt]="getCurrentLanguage()" class="flag-icon">
+              <span>{{getCurrentLanguage()}}</span>
+            </div>
+          </mat-select-trigger>
+          <mat-option *ngFor="let lang of ['en', 'es', 'fr']" [value]="lang">
+            <div class="language-option">
+              <img [src]="'assets/flags/' + lang + '.svg'" [alt]="lang" class="flag-icon">
+              <span>{{lang}}</span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </mat-toolbar>
 </div>
+
 <div *ngIf="isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
     <div class="brand-container">
-      <img src="assets/logo.png" alt="Creart Logo" class="navbar-logo">
-      <span class="navbar-brand">Creart Acabados</span>
-    </div>
-      <span class="spacer"></span>
-      <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
-      <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
-      <button mat-button routerLink="/admin/category" routerLinkActive="active">Category</button>
-      <button mat-button routerLink="/admin/product" routerLinkActive="active">Product</button>
-      <button mat-button routerLink="/admin/orders" routerLinkActive="active">Orders</button>
-      <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">Post Coupon</button>
-      <button mat-button routerLink="/admin/coupons" routerLinkActive="active">Coupons</button>
-      <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
-  </mat-toolbar>
-</div>
-<div *ngIf="isCustomerLoggedIn">
-  <mat-toolbar color="primary" class="navbar">
-    <div class="brand-container">
-      <img src="assets/logo.png" alt="Creart Logo" class="navbar-logo">
+      <img src="assets/img/logo.png" alt="Creart Logo" class="navbar-logo">
       <span class="navbar-brand">Creart Acabados</span>
     </div>
     <span class="spacer"></span>
-      <button mat-button routerLink="/about-us" routerLinkActive="active">About Us</button>
-      <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
-      <button mat-button routerLink="/customer/cart" routerLinkActive="active">Cart</button>
-      <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Orders</button>
-      <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</button>
-      <button mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
-      <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+    <div class="nav-items">
+      <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">{{ 'NAV.DASHBOARD' | translate }}</button>
+      <button mat-button routerLink="/admin/analytics" routerLinkActive="active">{{ 'NAV.ANALYTICS' | translate }}</button>
+      <button mat-button routerLink="/admin/category" routerLinkActive="active">{{ 'NAV.CATEGORY' | translate }}</button>
+      <button mat-button routerLink="/admin/product" routerLinkActive="active">{{ 'NAV.PRODUCT' | translate }}</button>
+      <button mat-button routerLink="/admin/orders" routerLinkActive="active">{{ 'NAV.ORDERS' | translate }}</button>
+      <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">{{ 'NAV.POST_COUPON' | translate }}</button>
+      <button mat-button routerLink="/admin/coupons" routerLinkActive="active">{{ 'NAV.COUPONS' | translate }}</button>
+      <button mat-button routerLinkActive="active" (click)="logout()">{{ 'NAV.LOGOUT' | translate }}</button>
+      <mat-form-field class="language-select">
+        <mat-select [value]="getCurrentLanguage()" (selectionChange)="setLanguage($event.value)">
+          <mat-select-trigger>
+            <div class="language-option">
+              <img [src]="'assets/flags/' + getCurrentLanguage() + '.svg'" [alt]="getCurrentLanguage()" class="flag-icon">
+              <span>{{getCurrentLanguage()}}</span>
+            </div>
+          </mat-select-trigger>
+          <mat-option *ngFor="let lang of ['en', 'es', 'fr']" [value]="lang">
+            <div class="language-option">
+              <img [src]="'assets/flags/' + lang + '.svg'" [alt]="lang" class="flag-icon">
+              <span>{{lang}}</span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <div class="brand-container">
+      <img src="assets/img/logo.png" alt="Creart Logo" class="navbar-logo">
+      <span class="navbar-brand">Creart Acabados</span>
+    </div>
+    <span class="spacer"></span>
+    <div class="nav-items">
+      <button mat-button routerLink="/about-us" routerLinkActive="active">{{ 'NAV.ABOUT_US' | translate }}</button>
+      <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">{{ 'NAV.DASHBOARD' | translate }}</button>
+      <button mat-button routerLink="/customer/cart" routerLinkActive="active">{{ 'NAV.CART' | translate }}</button>
+      <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">{{ 'NAV.ORDERS' | translate }}</button>
+      <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">{{ 'NAV.WISHLIST' | translate }}</button>
+      <button mat-button routerLink="/customer/profile" routerLinkActive="active">{{ 'NAV.PROFILE' | translate }}</button>
+      <button mat-button routerLinkActive="active" (click)="logout()">{{ 'NAV.LOGOUT' | translate }}</button>
+      <mat-form-field class="language-select">
+        <mat-select [value]="getCurrentLanguage()" (selectionChange)="setLanguage($event.value)">
+          <mat-select-trigger>
+            <div class="language-option">
+              <img [src]="'assets/flags/' + getCurrentLanguage() + '.svg'" [alt]="getCurrentLanguage()" class="flag-icon">
+              <span>{{getCurrentLanguage()}}</span>
+            </div>
+          </mat-select-trigger>
+          <mat-option *ngFor="let lang of ['en', 'es', 'fr']" [value]="lang">
+            <div class="language-option">
+              <img [src]="'assets/flags/' + lang + '.svg'" [alt]="lang" class="flag-icon">
+              <span>{{lang}}</span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </mat-toolbar>
 </div>
 <router-outlet></router-outlet>

@@ -1,16 +1,14 @@
-<div *ngIf="products.length > 0; else emptyCart">
-
+<div *ngIf="products.length > 0; else emptyCart"> 
     <form [formGroup]="searchProductForm" class="search-form" (submit)="submitForm()">
         <mat-form-field appearance="outline" class="search-input">
-            <mat-label>Enter Keyword to search</mat-label>
+            <mat-label>{{ 'DASHBOARD_CLIENT.SEARCH_KEYWORD' | translate }}</mat-label>
             <input matInput formControlName="title">
             <button mat-button matSuffix color="primary" [disabled]="searchProductForm.invalid">
                 <mat-icon>search</mat-icon>
             </button>
-            <mat-error *ngIf="searchProductForm.get('title').invalid">Keyword is required</mat-error>
+            <mat-error *ngIf="searchProductForm.get('title').invalid">{{ 'DASHBOARD_CLIENT.KEYWORD_REQUIRED' | translate }}</mat-error>
         </mat-form-field>
     </form>
-
 
     <div class="product-list">
         <mat-card class="product-card" *ngFor="let product of products">
@@ -25,11 +23,11 @@
 
                 <div class="product-info">
                     <div class="info-row">
-                        <span class="info-label">Price:</span>
+                        <span class="info-label">{{ 'DASHBOARD_CLIENT.PRICE_LABEL' | translate }}</span>
                         <span class="info-value">${{ product.price }}</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-label">Category:</span>
+                        <span class="info-label">{{ 'DASHBOARD_CLIENT.CATEGORY_LABEL' | translate }}</span>
                         <span class="info-value">{{ product.categoryName }}</span>
                     </div>
                 </div>
@@ -38,7 +36,7 @@
 
                 <div class="actions">
                     <button mat-raised-button color="primary" class="update-button" (click)="addToCart(product.id)">
-                        Add to cart
+                        {{ 'DASHBOARD_CLIENT.ADD_TO_CART' | translate }}
                     </button>
                 </div>
             </div>
@@ -49,6 +47,6 @@
 <ng-template #emptyCart>
     <div class="empty-cart">
         <mat-icon class="icon">remove_shopping_cart</mat-icon>
-        <span>Nothing to see here.</span>
+        <span>{{ 'DASHBOARD_CLIENT.EMPTY_CART_MESSAGE' | translate }}</span>
     </div>
 </ng-template>

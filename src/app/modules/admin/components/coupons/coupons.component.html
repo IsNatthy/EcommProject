@@ -1,35 +1,41 @@
 <div class="container">
     <mat-card>
-        <mat-card-content>
-            <table mat-table [dataSource]="coupons" class="mat-elevation-z8">
-                <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef>Coupon ID</th>
-                    <td mat-cell *matCellDef="let coupon">{{ coupon.id }}</td>
-                </ng-container>
-
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef>Name</th>
-                    <td mat-cell *matCellDef="let coupon">{{ coupon.name }}</td>
-                </ng-container>
-
-                <ng-container matColumnDef="discount">
-                    <th mat-header-cell *matHeaderCellDef>Discount</th>
-                    <td mat-cell *matCellDef="let coupon" class="bold-cell">{{ coupon.discount }}%</td>
-                </ng-container>
-
-                <ng-container matColumnDef="code">
-                    <th mat-header-cell *matHeaderCellDef>Code</th>
-                    <td mat-cell *matCellDef="let coupon" class="bold-cell">{{ coupon.code }}</td>
-                </ng-container>
-
-                <ng-container matColumnDef="expirationDate">
-                    <th mat-header-cell *matHeaderCellDef>Expiration Date</th>
-                    <td mat-cell *matCellDef="let coupon">{{ coupon.expirationDate | date: 'dd/MM/yyyy' }}</td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="['id', 'name', 'discount', 'code', 'expirationDate']"></tr>
-                <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'discount', 'code', 'expirationDate']"></tr>
-            </table>
-        </mat-card-content>
+      <mat-card-content>
+        <table mat-table [dataSource]="coupons" class="mat-elevation-z8">
+          <!-- Coupon ID -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>{{ 'COUPON.ID' | translate }}</th>
+            <td mat-cell *matCellDef="let coupon">{{ coupon.id }}</td>
+          </ng-container>
+  
+          <!-- Coupon Name -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>{{ 'COUPON.NAME' | translate }}</th>
+            <td mat-cell *matCellDef="let coupon">{{ coupon.name }}</td>
+          </ng-container>
+  
+          <!-- Discount -->
+          <ng-container matColumnDef="discount">
+            <th mat-header-cell *matHeaderCellDef>{{ 'COUPON.DISCOUNT' | translate }}</th>
+            <td mat-cell *matCellDef="let coupon" class="bold-cell">{{ coupon.discount }}%</td>
+          </ng-container>
+  
+          <!-- Code -->
+          <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef>{{ 'COUPON.CODE' | translate }}</th>
+            <td mat-cell *matCellDef="let coupon" class="bold-cell">{{ coupon.code }}</td>
+          </ng-container>
+  
+          <!-- Expiration Date -->
+          <ng-container matColumnDef="expirationDate">
+            <th mat-header-cell *matHeaderCellDef>{{ 'COUPON.EXPIRATION_DATE' | translate }}</th>
+            <td mat-cell *matCellDef="let coupon">{{ coupon.expirationDate | date: 'dd/MM/yyyy' }}</td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['id', 'name', 'discount', 'code', 'expirationDate']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'discount', 'code', 'expirationDate']"></tr>
+        </table>
+      </mat-card-content>
     </mat-card>
-</div>
+  </div>
+  

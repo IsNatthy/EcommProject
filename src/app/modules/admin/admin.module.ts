@@ -16,6 +16,12 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { OrderByStatusComponent } from './components/analytics/order-by-status/order-by-status.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -36,7 +42,14 @@ import { OrderByStatusComponent } from './components/analytics/order-by-status/o
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DemoAngularMaterialModule
+    DemoAngularMaterialModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ]
 })
 export class AdminModule { }

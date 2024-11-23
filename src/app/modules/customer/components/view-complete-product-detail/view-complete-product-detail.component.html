@@ -1,4 +1,4 @@
-<!-- Product Section -->
+<!-- Product Section --> 
 <div class="center-container" *ngIf="product">
     <div class="product-card">
         <div class="product-image-container">
@@ -10,8 +10,8 @@
         <div class="product-details">
             <h2>{{ product.name }}</h2>
             <p class="description">{{ product.description }}</p>
-            <p class="price">Price: ${{ product.price }}</p>
-            <p class="category">Category: {{ product.categoryName }}
+            <p class="price">{{ 'PRODUCT_SECTION.PRICE_LABEL' | translate }}: ${{ product.price }}</p>
+            <p class="category">{{ 'PRODUCT_SECTION.CATEGORY_LABEL' | translate }}: {{ product.categoryName }}
                 <mat-icon (click)="addToWishlist()" 
                     class="heart-icon"
                     [ngClass]="{'is-in-wishlist': isInWishlist}">
@@ -23,7 +23,7 @@
 </div>
 
 <!-- Reviews Section -->
-<h1 class="section-heading" *ngIf="reviews.length > 0">Customer Reviews</h1>
+<h1 class="section-heading" *ngIf="reviews.length > 0">{{ 'PRODUCT_SECTION.REVIEWS_SECTION_TITLE' | translate }}</h1>
 <div *ngIf="reviews" class="review-list">
     <div class="center-container">
         <div *ngFor="let review of reviews" class="review-card">
@@ -36,8 +36,8 @@
             <div class="review-details">
                 <h2>{{ review.description }}</h2>
                 <div class="details-row">
-                    <p class="rating">Rating: {{ review.rating }}</p>
-                    <p class="username">Username: {{ review.username }}</p>
+                    <p class="rating">{{ 'PRODUCT_SECTION.RATING_LABEL' | translate }}: {{ review.rating }}</p>
+                    <p class="username">{{ 'PRODUCT_SECTION.USERNAME_LABEL' | translate }}: {{ review.username }}</p>
                 </div>
             </div>
         </div>
@@ -45,14 +45,14 @@
 </div>
 
 <!-- FAQs Section -->
-<h1 class="section-heading" *ngIf="FAQS.length >0">Frequently Asked Questions</h1>
+<h1 class="section-heading" *ngIf="FAQS.length > 0">{{ 'PRODUCT_SECTION.FAQS_SECTION_TITLE' | translate }}</h1>
 <div *ngIf="FAQS" class="faq-list">
     <div class="center-container">
         <div *ngFor="let faq of FAQS" class="faq-card">
             <div class="faq-details">
-                <p class="question">Question:</p>
+                <p class="question">{{ 'PRODUCT_SECTION.QUESTION_LABEL' | translate }}</p>
                 <p class="question-text">{{ faq.question }}</p>
-                <p class="answer">Answer:</p>
+                <p class="answer">{{ 'PRODUCT_SECTION.ANSWER_LABEL' | translate }}</p>
                 <p class="answer-text">{{ faq.answer }}</p>
             </div>
         </div>

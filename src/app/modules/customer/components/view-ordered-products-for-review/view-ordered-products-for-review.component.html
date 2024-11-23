@@ -1,4 +1,4 @@
-<div *ngIf="orderedProductDetailsList.length > 0">
+<div *ngIf="orderedProductDetailsList.length > 0"> 
     <div class="ordered-product-container">
         <div class="ordered-product" *ngFor="let product of orderedProductDetailsList">
             <div class="product-info">
@@ -11,21 +11,22 @@
                             {{ product.name }}
                         </div>
                         <div class="item-price">
-                            Price: {{ product.productPrice | currency }}
+                            {{ 'ORDERED_PRODUCT_SECTION.PRICE_LABEL' | translate }}: {{ product.productPrice | currency }}
                         </div>
                         <div class="item-quantity">
-                            Quantity: {{ product.quantity }}
+                            {{ 'ORDERED_PRODUCT_SECTION.QUANTITY_LABEL' | translate }}: {{ product.quantity }}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="action-buttons">
-                <button mat-raised-button color="primary" routerLink="/customer/review/{{product.id}}">Give
-                    Review</button>
+                <button mat-raised-button color="primary" routerLink="/customer/review/{{product.id}}">
+                    {{ 'ORDERED_PRODUCT_SECTION.GIVE_REVIEW_BUTTON' | translate }}
+                </button>
             </div>
         </div>
         <div class="total-price">
-            Total: {{ totalAmount | currency }}
+            {{ 'ORDERED_PRODUCT_SECTION.TOTAL_LABEL' | translate }}: {{ totalAmount | currency }}
         </div>
     </div>
 </div>

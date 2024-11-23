@@ -16,6 +16,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ImgDialogComponent } from './components/view-complete-product-detail/img-dialog/img-dialog.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent, ViewCompleteProductDetailComponent, GetMyWishlistComponent, ProfileComponent, ChangePasswordComponent, ImgDialogComponent],
   imports: [
@@ -25,6 +32,13 @@ import { ImgDialogComponent } from './components/view-complete-product-detail/im
     ReactiveFormsModule,
     HttpClientModule,
     DemoAngularMaterialModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ]
 })
 export class CustomerModule { }

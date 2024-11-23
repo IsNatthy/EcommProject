@@ -1,11 +1,11 @@
-<div class="container">
-    <h2>Add Product</h2>
+<div class="container"> 
+    <h2>{{ 'ADD_PRODUCT.TITLE' | translate }}</h2>
     <mat-spinner *ngIf="isSpinning"></mat-spinner>
     <form [formGroup]="productForm" (ngSubmit)="addProduct()" [class.spinner-active]="isSpinning">
 
         <div class="file-upload-container">
             <label class="file-upload-label">
-                <span>Select a File</span>
+                <span>{{ 'ADD_PRODUCT.SELECT_FILE' | translate }}</span>
                 <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
                 <mat-icon>attach_file</mat-icon>
             </label>
@@ -18,37 +18,33 @@
         </div>
 
         <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Select a Category</mat-label>
+            <mat-label>{{ 'ADD_PRODUCT.SELECT_CATEGORY_LABEL' | translate }}</mat-label>
             <mat-select formControlName="categoryId" name="categoryId">
                 <mat-option *ngFor="let category of listOfCategories" [value]="category.id">
                     {{category.name}}
                 </mat-option>
             </mat-select>
-            <mat-error *ngIf="productForm.get('categoryId')?.hasError('required')">This Input Is
-                Required!</mat-error>
+            <mat-error *ngIf="productForm.get('categoryId')?.hasError('required')">{{ 'ADD_PRODUCT.SELECT_CATEGORY_ERROR' | translate }}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Name</mat-label>
-            <input matInput type="text" placeholder="Name" formControlName="name" />
-            <mat-error *ngIf="productForm.get('name')?.hasError('required')">This Input Is
-                Required!</mat-error>
+            <mat-label>{{ 'ADD_PRODUCT.NAME_LABEL' | translate }}</mat-label>
+            <input matInput type="text" placeholder="{{ 'ADD_PRODUCT.NAME_PLACEHOLDER' | translate }}" formControlName="name" />
+            <mat-error *ngIf="productForm.get('name')?.hasError('required')">{{ 'ADD_PRODUCT.REQUIRED_ERROR' | translate }}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Price</mat-label>
-            <input matInput type="number" placeholder="Price" formControlName="price" />
-            <mat-error *ngIf="productForm.get('price')?.hasError('required')">This Input Is
-                Required!</mat-error>
+            <mat-label>{{ 'ADD_PRODUCT.PRICE_LABEL' | translate }}</mat-label>
+            <input matInput type="number" placeholder="{{ 'ADD_PRODUCT.PRICE_PLACEHOLDER' | translate }}" formControlName="price" />
+            <mat-error *ngIf="productForm.get('price')?.hasError('required')">{{ 'ADD_PRODUCT.REQUIRED_ERROR' | translate }}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Description</mat-label>
-            <textarea matInput placeholder="Description" formControlName="description"></textarea>
-            <mat-error *ngIf="productForm.get('description')?.hasError('required')">This Input Is
-                Required!</mat-error>
+            <mat-label>{{ 'ADD_PRODUCT.DESCRIPTION_LABEL' | translate }}</mat-label>
+            <textarea matInput placeholder="{{ 'ADD_PRODUCT.DESCRIPTION_PLACEHOLDER' | translate }}" formControlName="description"></textarea>
+            <mat-error *ngIf="productForm.get('description')?.hasError('required')">{{ 'ADD_PRODUCT.REQUIRED_ERROR' | translate }}</mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">Add Product</button>
+        <button mat-raised-button color="primary" type="submit">{{ 'ADD_PRODUCT.ADD_BUTTON' | translate }}</button>
     </form>
 </div>

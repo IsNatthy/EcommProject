@@ -12,6 +12,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TrackOrderComponent } from './auth/auth-components/track-order/track-order.component';
 import { AboutUsComponent } from './auth/auth-components/about-us/about-us.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +34,14 @@ import { AboutUsComponent } from './auth/auth-components/about-us/about-us.compo
     DemoAngularMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

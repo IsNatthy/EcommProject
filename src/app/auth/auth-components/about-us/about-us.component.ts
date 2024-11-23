@@ -13,22 +13,22 @@ export class AboutUsComponent implements OnInit {
 
   products = [
     {
-      image: 'assets/celosia.jpg',
+      image: 'assets/img/celosia.jpg',
       title: 'Decorative Lattices',
       description: 'Custom-designed lattices for elegant space division'
     },
     {
-      image: 'assets/maceta.jpg',
+      image: 'assets/img/maceta.jpg',
       title: 'Modern Planters',
       description: 'Stylish planters for indoor and outdoor spaces'
     },
     {
-      image: 'assets/jarron.jpg',
+      image: 'assets/img/jarron.jpg',
       title: 'Artisanal Flowerpots',
       description: 'Unique handcrafted pots for your botanical collection'
     },
     {
-      image: 'assets/tabla.jpg',
+      image: 'assets/img/tabla.jpg',
       title: 'Wooden Boards',
       description: 'Premium crafted wooden boards for serving and decoration'
     }

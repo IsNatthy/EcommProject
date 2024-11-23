@@ -1,0 +1,278 @@
+{
+    "NAV": {
+      "ABOUT_US": "About",
+      "TRACK_ORDER": "Track Order",
+      "REGISTER": "Register",
+      "LOGIN": "Login",
+      "LOGOUT": "Logout",
+      "DASHBOARD": "Panel",
+      "ANALYTICS": "Stats",
+      "CATEGORY": "Category",
+      "PRODUCT": "Product",
+      "ORDERS": "Orders",
+      "POST_COUPON": "Create",
+      "COUPONS": "Coupons",
+      "CART": "Cart",
+      "WISHLIST": "Wishlist",
+      "PROFILE": "Profile"
+    },
+    "ABOUT": {
+      "WELCOME": "Welcome to Creart Acabados",
+      "SUBTITLE": "Handcrafted Excellence from Neiva, Colombia",
+      "HERITAGE": "Our Heritage",
+      "HERITAGE_DESCRIPTION_1": "Nestled in the heart of Huila, Creart Acabados stands as a testament to Colombian craftsmanship. We specialize in creating functional and aesthetic objects that blend traditional artisanal techniques with modern design principles.",
+      "HERITAGE_DESCRIPTION_2": "Our expert artisans pour their creativity and skill into every piece, ensuring each creation reflects our commitment to quality and originality. As proud holders of the 'Sello Compra Lo Nuestro' certification, we represent the finest of Colombian production."
+    },
+    "FEATURES": {
+      "HANDCRAFTED": "Handcrafted",
+      "HANDCRAFTED_DESCRIPTION": "Every piece crafted by expert artisans",
+      "MODERN_DESIGN": "Modern Design",
+      "MODERN_DESIGN_DESCRIPTION": "Blending tradition with contemporary aesthetics",
+      "LOCAL_PRIDE": "Local Pride",
+      "LOCAL_PRIDE_DESCRIPTION": "Proudly made in Huila, Colombia"
+    },
+    "PRODUCTS": {
+      "OUR_CREATIONS": "Our Creations",
+      "LATTICES_TITLE": "Decorative Lattices",
+      "LATTICES_DESCRIPTION": "Custom-designed lattices for elegant space division",
+      "PLANTERS_TITLE": "Modern Planters",
+      "PLANTERS_DESCRIPTION": "Stylish planters for indoor and outdoor spaces",
+      "FLOWERPOTS_TITLE": "Artisanal Flowerpots",
+      "FLOWERPOTS_DESCRIPTION": "Unique handcrafted pots for your botanical collection",
+      "BOARDS_TITLE": "Wooden Boards",
+      "BOARDS_DESCRIPTION": "Premium crafted wooden boards for serving and decoration",
+      "LOGIN_TO_SEE_ALL_PRODUCTS": "Login to See All Products"
+    },
+    "LOGIN": {
+      "TITLE": "Login",
+      "EMAIL_LABEL": "E-mail",
+      "EMAIL_PLACEHOLDER": "Email",
+      "EMAIL_ERROR": "Please enter a valid email address.",
+      "PASSWORD_LABEL": "Password",
+      "PASSWORD_PLACEHOLDER": "Password",
+      "PASSWORD_ERROR": "Please enter a valid password.",
+      "SUBMIT_BUTTON": "Login",
+      "SIGNUP_BUTTON": "Don't have an account? Sign Up"
+    },
+    "SIGNUP": {
+      "TITLE": "Sign Up",
+      "NAME_LABEL": "Name",
+      "NAME_PLACEHOLDER": "Name",
+      "NAME_ERROR": "Please enter a valid name.",
+      "EMAIL_LABEL": "E-mail",
+      "EMAIL_PLACEHOLDER": "E-mail",
+      "EMAIL_ERROR": "Please enter a valid email address.",
+      "PASSWORD_LABEL": "Password",
+      "PASSWORD_PLACEHOLDER": "Password",
+      "PASSWORD_ERROR": "Please enter a valid password.",
+      "CONFIRM_PASSWORD_LABEL": "Confirm Password",
+      "CONFIRM_PASSWORD_PLACEHOLDER": "Password",
+      "CONFIRM_PASSWORD_ERROR": "Passwords do not match.",
+      "SUBMIT_BUTTON": "Sign Up",
+      "LOGIN_BUTTON": "Already have an account? Login"
+    },
+    "TRACK_ORDER": {
+      "LABEL": "Enter Tracking ID to search",
+      "BUTTON": "Search",
+      "ERROR": "Tracking ID is required"
+    },
+    "ORDER_DETAILS": {
+      "TITLE": "Order Details",
+      "TRACKING_ID": "Tracking ID",
+      "USER_NAME": "User Name",
+      "ADDRESS": "Address",
+      "AMOUNT": "Amount",
+      "STATUS": "Status",
+      "DATE": "Date"
+    },
+    "ORDER_STATUS": {
+      "PLACED": "Placed",
+      "SHIPPED": "Shipped",
+      "DELIVERED": "Delivered"
+    },
+    "ANALYTICS": {
+      "ORDERS": "Orders",
+      "CURRENT_MONTH": "Current Month",
+      "PREVIOUS_MONTH": "Previous Month",
+      "EARNINGS": "Earnings"
+    },
+    "COUPON": {
+      "ID": "Coupon ID",
+      "NAME": "Name",
+      "DISCOUNT": "Discount",
+      "CODE": "Code",
+      "EXPIRATION_DATE": "Expiration Date"
+    },
+    "DASHBOARD_ADMIN": {
+      "SEARCH_LABEL": "Enter Keyword to search",
+      "SEARCH_ERROR": "Keyword is required",
+      "PRICE": "Price",
+      "CATEGORY": "Category",
+      "FAQ": "FAQ",
+      "UPDATE": "Update",
+      "DELETE": "Delete",
+      "EMPTY_MESSAGE": "Nothing to see here."
+    },
+    "ORDER_ADMIN": {
+    "ORDERS_MANAGEMENT": "Orders Management",
+    "TRACKING_ID": "Tracking ID",
+    "USER_NAME": "User Name",
+    "AMOUNT": "Amount",
+    "DESCRIPTION": "Description",
+    "ADDRESS": "Address",
+    "DATE": "Date",
+    "STATUS": "Status",
+    "ACTION": "Action",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered"
+    },
+    "ADD_CATEGORY": {
+    "TITLE": "Add Category",
+    "NAME_LABEL": "Name",
+    "NAME_PLACEHOLDER": "Name",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_PLACEHOLDER": "Description",
+    "REQUIRED_ERROR": "This input is required!",
+    "ADD_BUTTON": "Add Category"
+    },
+    "ADD_COUPON": {
+    "TITLE": "Add Coupon",
+    "NAME_LABEL": "Name",
+    "NAME_PLACEHOLDER": "Name",
+    "CODE_LABEL": "Code",
+    "CODE_PLACEHOLDER": "Code",
+    "DISCOUNT_LABEL": "Discount %",
+    "DISCOUNT_PLACEHOLDER": "Discount",
+    "EXPIRATION_DATE_LABEL": "Expiration Date",
+    "EXPIRATION_DATE_PLACEHOLDER": "Expiration Date",
+    "REQUIRED_ERROR": "This input is required!",
+    "ADD_BUTTON": "Add Coupon",
+    "DATE_HINT": "MM/DD/YYYY"
+    },
+    "ADD_PRODUCT": {
+    "TITLE": "Add Product",
+    "SELECT_FILE": "Select a File",
+    "SELECT_CATEGORY_LABEL": "Select a Category",
+    "SELECT_CATEGORY_ERROR": "This input is required!",
+    "NAME_LABEL": "Name",
+    "NAME_PLACEHOLDER": "Name",
+    "PRICE_LABEL": "Price",
+    "PRICE_PLACEHOLDER": "Price",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_PLACEHOLDER": "Description",
+    "REQUIRED_ERROR": "This input is required!",
+    "ADD_BUTTON": "Add Product"
+    },
+    "POST_FAQ": {
+    "TITLE": "Post FAQ",
+    "QUESTION_LABEL": "Question",
+    "QUESTION_PLACEHOLDER": "Question",
+    "ANSWER_LABEL": "Answer",
+    "ANSWER_PLACEHOLDER": "Answer",
+    "REQUIRED_ERROR": "This input is required!",
+    "POST_BUTTON": "Post FAQ"
+    },
+    "UPDATE_PRODUCT": {
+    "TITLE": "Update Product",
+    "SELECT_FILE": "Select a File",
+    "EXISTING_IMAGE_ALT": "Existing Image",
+    "CATEGORY_LABEL": "Select a Category",
+    "CATEGORY_REQUIRED_ERROR": "This input is required!",
+    "NAME_LABEL": "Name",
+    "NAME_REQUIRED_ERROR": "This input is required!",
+    "PRICE_LABEL": "Price",
+    "PRICE_REQUIRED_ERROR": "This input is required!",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_REQUIRED_ERROR": "This input is required!",
+    "UPDATE_BUTTON": "Update Product"
+    },
+    "CART": {
+    "TOTAL_AMOUNT": "Total Amount:",
+    "DISCOUNT": "Discount:",
+    "AMOUNT": "Amount:",
+    "COUPON_APPLIED": "Coupon Applied:",
+    "PLACE_ORDER": "Place Order",
+    "CODE_LABEL": "Code",
+    "CODE_REQUIRED_ERROR": "This input is required!",
+    "APPLY_COUPON": "Apply Coupon",
+    "EMPTY_CART_MESSAGE": "Nothing to see here."
+    },
+    "CHANGE_PASSWORD": {
+    "TITLE": "Change Password",
+    "OLD_PASSWORD": "Old Password",
+    "NEW_PASSWORD": "New Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "VALID_PASSWORD_ERROR": "Please enter a valid password.",
+    "PASSWORD_MISMATCH_ERROR": "Passwords do not match.",
+    "CHANGE_BUTTON": "Change",
+    "PROFILE_UPDATE": "Want to update the Profile?"
+  },
+    "DASHBOARD_CLIENT": {
+    "SEARCH_KEYWORD": "Enter Keyword to search",
+    "KEYWORD_REQUIRED": "Keyword is required",
+    "PRICE_LABEL": "Price:",
+    "CATEGORY_LABEL": "Category:",
+    "ADD_TO_CART": "Add to cart",
+    "EMPTY_CART_MESSAGE": "Nothing to see here."
+  },
+    "PRODUCT_CARD": {
+    "PRICE_LABEL": "Price:"
+  },
+    "MY_ORDERS": {
+    "TITLE": "My Orders",
+    "TRACKING_ID": "Tracking ID",
+    "AMOUNT": "Amount",
+    "DESCRIPTION": "Description",
+    "ADDRESS": "Address",
+    "DATE": "Date",
+    "STATUS": "Status",
+    "ACTION": "Action",
+    "REVIEW": "Review"
+  },
+    "PLACE_ORDER": {
+    "TITLE": "Place Order",
+    "ADDRESS": "Address",
+    "DESCRIPTION": "Description",
+    "ORDER_BUTTON": "Order",
+    "CLOSE_BUTTON": "Close",
+    "REQUIRED_INPUT": "This Input Is Required!"
+  },
+    "PROFILE": {
+    "EMAIL_LABEL": "E-mail",
+    "NAME_LABEL": "Name",
+    "REQUIRED_INPUT": "This Input is Required!",
+    "SAVE_BUTTON": "Save",
+    "CHANGE_PASSWORD_BUTTON": "Want to change the password?"
+  },
+    "REVIEW_FORM": {
+    "SELECT_FILE": "Select a File",
+    "RATING_LABEL": "Rating",
+    "RATING_OPTION_1": "1 Star",
+    "RATING_OPTION_2": "2 Stars",
+    "RATING_OPTION_3": "3 Stars",
+    "RATING_OPTION_4": "4 Stars",
+    "RATING_OPTION_5": "5 Stars",
+    "RATING_REQUIRED": "Please select a rating!",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_REQUIRED": "This input is required!",
+    "SUBMIT_BUTTON": "Submit"
+  },
+    "PRODUCT_SECTION": {
+    "PRICE_LABEL": "Price",
+    "CATEGORY_LABEL": "Category",
+    "REVIEWS_SECTION_TITLE": "Customer Reviews",
+    "FAQS_SECTION_TITLE": "Frequently Asked Questions",
+    "QUESTION_LABEL": "Question:",
+    "ANSWER_LABEL": "Answer:",
+    "RATING_LABEL": "Rating",
+    "USERNAME_LABEL": "Username"
+  },
+    "ORDERED_PRODUCT_SECTION": {
+    "PRICE_LABEL": "Price",
+    "QUANTITY_LABEL": "Quantity",
+    "TOTAL_LABEL": "Total",
+    "GIVE_REVIEW_BUTTON": "Give Review"
+  }
+
+}
+  

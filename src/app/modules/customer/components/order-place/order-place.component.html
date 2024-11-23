@@ -1,29 +1,27 @@
 <div class="container">
     <mat-card>
-        <mat-card-title>Place Order</mat-card-title>
+        <mat-card-title>{{ 'PLACE_ORDER.TITLE' | translate }}</mat-card-title>
         <mat-card-content>
             <form [formGroup]="orderForm">
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Address</mat-label>
-                    <input matInput formControlName="address" placeholder="Address" required>
+                    <mat-label>{{ 'PLACE_ORDER.ADDRESS' | translate }}</mat-label>
+                    <input matInput formControlName="address" placeholder="{{ 'PLACE_ORDER.ADDRESS' | translate }}" required>
                     <mat-error *ngIf="orderForm.get('address').invalid && orderForm.get('address').touched">
-                        This Input Is Required!
+                        {{ 'PLACE_ORDER.REQUIRED_INPUT' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Description</mat-label>
-                    <input matInput formControlName="orderDescription" placeholder="Description">
+                    <mat-label>{{ 'PLACE_ORDER.DESCRIPTION' | translate }}</mat-label>
+                    <input matInput formControlName="orderDescription" placeholder="{{ 'PLACE_ORDER.DESCRIPTION' | translate }}">
                 </mat-form-field>
-
-             
 
                 <div class="button-row">
                     <button mat-raised-button color="primary" type="submit" [disabled]="orderForm.invalid"
-                        (click)="placeOrder()" class="order-button">Order</button>
-                    <button mat-stroked-button color="warn" class="close-button" (click)="closeForm()" class="close-button">
-                        Close
+                        (click)="placeOrder()" class="order-button">{{ 'PLACE_ORDER.ORDER_BUTTON' | translate }}</button>
+                    <button mat-stroked-button color="warn" class="close-button" (click)="closeForm()">
+                        {{ 'PLACE_ORDER.CLOSE_BUTTON' | translate }}
                     </button>
                 </div>
 

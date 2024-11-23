@@ -1,4 +1,4 @@
-<!-- Products Card -->
+<!-- Products Card --> 
 <div class="center-container" *ngIf="products">
     <div class="product-card" *ngFor="let product of products">
         <div class="product-image">
@@ -7,7 +7,7 @@
         <div class="product-details">
             <h2>{{ product.productName }}</h2>
             <p class="description">{{ product.productDescription }}</p>
-            <p class="price">Price: ${{ product.price }}</p>
+            <p class="price">{{ 'PRODUCT_CARD.PRICE_LABEL' | translate }} ${{ product.price }}</p>
         </div>
     </div>
 </div>

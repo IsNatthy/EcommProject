@@ -1,0 +1,277 @@
+{
+  "NAV": {
+    "ABOUT_US": "À propos",
+    "TRACK_ORDER": "Suivi",
+    "REGISTER": "S'inscrire",
+    "LOGIN": "Connexion",
+    "LOGOUT": "Quitter",
+    "DASHBOARD": "Tableau",
+    "ANALYTICS": "Analyses",
+    "CATEGORY": "Catégorie",
+    "PRODUCT": "Produit",
+    "ORDERS": "Commandes",
+    "POST_COUPON": "Créer",
+    "COUPONS": "Coupons",
+    "CART": "Panier",
+    "WISHLIST": "Favoris",
+    "PROFILE": "Profil"
+  },
+  "ABOUT": {
+    "WELCOME": "Bienvenue à Creart Acabados",
+    "SUBTITLE": "Excellence artisanale de Neiva, Colombie",
+    "HERITAGE": "Notre Héritage",
+    "HERITAGE_DESCRIPTION_1": "Située au cœur du Huila, Creart Acabados est un témoignage de l'artisanat colombien. Nous nous spécialisons dans la création d'objets fonctionnels et esthétiques qui allient des techniques artisanales traditionnelles à des principes de design moderne.",
+    "HERITAGE_DESCRIPTION_2": "Nos artisans experts mettent leur créativité et leur savoir-faire dans chaque pièce, garantissant que chaque création reflète notre engagement envers la qualité et l'originalité. En tant que fiers détenteurs de la certification 'Sello Compra Lo Nuestro', nous représentons le meilleur de la production colombienne."
+  },
+  "FEATURES": {
+    "HANDCRAFTED": "Fait à la main",
+    "HANDCRAFTED_DESCRIPTION": "Chaque pièce réalisée par des artisans experts",
+    "MODERN_DESIGN": "Design Moderne",
+    "MODERN_DESIGN_DESCRIPTION": "Mélange de tradition et d'esthétique contemporaine",
+    "LOCAL_PRIDE": "Fierté Locale",
+    "LOCAL_PRIDE_DESCRIPTION": "Fièrement fabriqué à Huila, Colombie"
+  },
+  "PRODUCTS": {
+    "OUR_CREATIONS": "Nos Créations",
+    "LATTICES_TITLE": "Claustras Décoratives",
+    "LATTICES_DESCRIPTION": "Claustras sur mesure pour des divisions élégantes",
+    "PLANTERS_TITLE": "Jardinières Modernes",
+    "PLANTERS_DESCRIPTION": "Jardinières élégantes pour espaces intérieurs et extérieurs",
+    "FLOWERPOTS_TITLE": "Pots Artisanaux",
+    "FLOWERPOTS_DESCRIPTION": "Pots uniques fabriqués à la main pour votre collection botanique",
+    "BOARDS_TITLE": "Planches en Bois",
+    "BOARDS_DESCRIPTION": "Planches en bois haut de gamme pour servir et décorer",
+    "LOGIN_TO_SEE_ALL_PRODUCTS": "Connectez-vous pour voir tous les produits"
+  },
+  "LOGIN": {
+    "TITLE": "Connexion",
+    "EMAIL_LABEL": "E-mail",
+    "EMAIL_PLACEHOLDER": "Courriel",
+    "EMAIL_ERROR": "Veuillez entrer une adresse e-mail valide.",
+    "PASSWORD_LABEL": "Mot de Passe",
+    "PASSWORD_PLACEHOLDER": "Mot de Passe",
+    "PASSWORD_ERROR": "Veuillez entrer un mot de passe valide.",
+    "SUBMIT_BUTTON": "Connexion",
+    "SIGNUP_BUTTON": "Vous n'avez pas de compte ? Inscrivez-vous"
+  },
+  "SIGNUP": {
+    "TITLE": "Inscription",
+    "NAME_LABEL": "Nom",
+    "NAME_PLACEHOLDER": "Nom",
+    "NAME_ERROR": "Veuillez entrer un nom valide.",
+    "EMAIL_LABEL": "E-mail",
+    "EMAIL_PLACEHOLDER": "E-mail",
+    "EMAIL_ERROR": "Veuillez entrer une adresse e-mail valide.",
+    "PASSWORD_LABEL": "Mot de passe",
+    "PASSWORD_PLACEHOLDER": "Mot de passe",
+    "PASSWORD_ERROR": "Veuillez entrer un mot de passe valide.",
+    "CONFIRM_PASSWORD_LABEL": "Confirmer le mot de passe",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Mot de passe",
+    "CONFIRM_PASSWORD_ERROR": "Les mots de passe ne correspondent pas.",
+    "SUBMIT_BUTTON": "S'inscrire",
+    "LOGIN_BUTTON": "Vous avez déjà un compte ? Connectez-vous"
+  },
+  "TRACK_ORDER": {
+    "LABEL": "Entrez l'ID de suivi pour rechercher",
+    "BUTTON": "Rechercher",
+    "ERROR": "L'ID de suivi est requis"
+  },
+  "ORDER_DETAILS": {
+    "TITLE": "Détails de la Commande",
+    "TRACKING_ID": "ID de Suivi",
+    "USER_NAME": "Nom de l'Utilisateur",
+    "ADDRESS": "Adresse",
+    "AMOUNT": "Montant",
+    "STATUS": "Statut",
+    "DATE": "Date"
+  },
+  "ORDER_STATUS": {
+    "PLACED": "Passé",
+    "SHIPPED": "Expédié",
+    "DELIVERED": "Livré"
+  },
+  "ANALYTICS": {
+    "ORDERS": "Commandes",
+    "CURRENT_MONTH": "Mois actuel",
+    "PREVIOUS_MONTH": "Mois précédent",
+    "EARNINGS": "Revenus"
+  },
+  "COUPON": {
+    "ID": "ID du coupon",
+    "NAME": "Nom",
+    "DISCOUNT": "Réduction",
+    "CODE": "Code",
+    "EXPIRATION_DATE": "Date d'expiration"
+  },
+  "DASHBOARD_ADMIN": {
+    "SEARCH_LABEL": "Entrez un mot-clé à rechercher",
+    "SEARCH_ERROR": "Un mot-clé est requis",
+    "PRICE": "Prix",
+    "CATEGORY": "Catégorie",
+    "FAQ": "FAQ",
+    "UPDATE": "Mettre à jour",
+    "DELETE": "Supprimer",
+    "EMPTY_MESSAGE": "Rien à voir ici."
+  },
+  "ORDER_ADMIN": {
+    "ORDERS_MANAGEMENT": "Gestion des Commandes",
+    "TRACKING_ID": "ID de Suivi",
+    "USER_NAME": "Nom de l'Utilisateur",
+    "AMOUNT": "Montant",
+    "DESCRIPTION": "Description",
+    "ADDRESS": "Adresse",
+    "DATE": "Date",
+    "STATUS": "Statut",
+    "ACTION": "Action",
+    "SHIPPED": "Expédié",
+    "DELIVERED": "Livré"
+    },
+    "ADD_CATEGORY": {
+    "TITLE": "Ajouter une Catégorie",
+    "NAME_LABEL": "Nom",
+    "NAME_PLACEHOLDER": "Nom",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_PLACEHOLDER": "Description",
+    "REQUIRED_ERROR": "Ce champ est requis!",
+    "ADD_BUTTON": "Ajouter une Catégorie"
+    },
+    "ADD_COUPON": {
+    "TITLE": "Ajouter un Coupon",
+    "NAME_LABEL": "Nom",
+    "NAME_PLACEHOLDER": "Nom",
+    "CODE_LABEL": "Code",
+    "CODE_PLACEHOLDER": "Code",
+    "DISCOUNT_LABEL": "Réduction %",
+    "DISCOUNT_PLACEHOLDER": "Réduction",
+    "EXPIRATION_DATE_LABEL": "Date d'Expiration",
+    "EXPIRATION_DATE_PLACEHOLDER": "Date d'Expiration",
+    "REQUIRED_ERROR": "Ce champ est requis!",
+    "ADD_BUTTON": "Ajouter un Coupon",
+    "DATE_HINT": "MM/JJ/AAAA"
+    },
+    "ADD_PRODUCT": {
+    "TITLE": "Ajouter un Produit",
+    "SELECT_FILE": "Sélectionner un Fichier",
+    "SELECT_CATEGORY_LABEL": "Sélectionner une Catégorie",
+    "SELECT_CATEGORY_ERROR": "Ce champ est obligatoire!",
+    "NAME_LABEL": "Nom",
+    "NAME_PLACEHOLDER": "Nom",
+    "PRICE_LABEL": "Prix",
+    "PRICE_PLACEHOLDER": "Prix",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_PLACEHOLDER": "Description",
+    "REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "ADD_BUTTON": "Ajouter un Produit"
+    },
+    "POST_FAQ": {
+    "TITLE": "Publier une Question Fréquemment Posée",
+    "QUESTION_LABEL": "Question",
+    "QUESTION_PLACEHOLDER": "Question",
+    "ANSWER_LABEL": "Réponse",
+    "ANSWER_PLACEHOLDER": "Réponse",
+    "REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "POST_BUTTON": "Publier une FAQ"
+    },
+    "UPDATE_PRODUCT": {
+    "TITLE": "Mettre à jour le Produit",
+    "SELECT_FILE": "Sélectionner un fichier",
+    "EXISTING_IMAGE_ALT": "Image existante",
+    "CATEGORY_LABEL": "Sélectionner une Catégorie",
+    "CATEGORY_REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "NAME_LABEL": "Nom",
+    "NAME_REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "PRICE_LABEL": "Prix",
+    "PRICE_REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "UPDATE_BUTTON": "Mettre à jour le Produit"
+    },
+    "CART": {
+    "TOTAL_AMOUNT": "Montant Total:",
+    "DISCOUNT": "Réduction:",
+    "AMOUNT": "Montant:",
+    "COUPON_APPLIED": "Coupon Appliqué:",
+    "PLACE_ORDER": "Passer la Commande",
+    "CODE_LABEL": "Code",
+    "CODE_REQUIRED_ERROR": "Ce champ est obligatoire!",
+    "APPLY_COUPON": "Appliquer le Coupon",
+    "EMPTY_CART_MESSAGE": "Rien à voir ici."
+    },
+    "CHANGE_PASSWORD": {
+    "TITLE": "Changer le Mot de Passe",
+    "OLD_PASSWORD": "Ancien Mot de Passe",
+    "NEW_PASSWORD": "Nouveau Mot de Passe",
+    "CONFIRM_PASSWORD": "Confirmer le Mot de Passe",
+    "VALID_PASSWORD_ERROR": "Veuillez entrer un mot de passe valide.",
+    "PASSWORD_MISMATCH_ERROR": "Les mots de passe ne correspondent pas.",
+    "CHANGE_BUTTON": "Changer",
+    "PROFILE_UPDATE": "Voulez-vous mettre à jour le profil ?"
+  },
+    "DASHBOARD_CLIENT": {
+    "SEARCH_KEYWORD": "Entrez un mot-clé pour rechercher",
+    "KEYWORD_REQUIRED": "Le mot-clé est requis",
+    "PRICE_LABEL": "Prix :",
+    "CATEGORY_LABEL": "Catégorie :",
+    "ADD_TO_CART": "Ajouter au panier",
+    "EMPTY_CART_MESSAGE": "Rien à voir ici."
+  },
+    "PRODUCT_CARD": {
+    "PRICE_LABEL": "Prix :"
+  },
+    "MY_ORDERS": {
+    "TITLE": "Mes Commandes",
+    "TRACKING_ID": "ID de suivi",
+    "AMOUNT": "Montant",
+    "DESCRIPTION": "Description",
+    "ADDRESS": "Adresse",
+    "DATE": "Date",
+    "STATUS": "Statut",
+    "ACTION": "Action",
+    "REVIEW": "Avis"
+  },
+    "PLACE_ORDER": {
+    "TITLE": "Passer la Commande",
+    "ADDRESS": "Adresse",
+    "DESCRIPTION": "Description",
+    "ORDER_BUTTON": "Commander",
+    "CLOSE_BUTTON": "Fermer",
+    "REQUIRED_INPUT": "Ce champ est obligatoire!"
+  },
+    "PROFILE": {
+    "EMAIL_LABEL": "E-mail",
+    "NAME_LABEL": "Nom",
+    "REQUIRED_INPUT": "Ce champ est obligatoire!",
+    "SAVE_BUTTON": "Sauvegarder",
+    "CHANGE_PASSWORD_BUTTON": "Voulez-vous changer le mot de passe?"
+  },
+    "REVIEW_FORM": {
+    "SELECT_FILE": "Sélectionner un fichier",
+    "RATING_LABEL": "Évaluation",
+    "RATING_OPTION_1": "1 Étoile",
+    "RATING_OPTION_2": "2 Étoiles",
+    "RATING_OPTION_3": "3 Étoiles",
+    "RATING_OPTION_4": "4 Étoiles",
+    "RATING_OPTION_5": "5 Étoiles",
+    "RATING_REQUIRED": "Veuillez sélectionner une évaluation!",
+    "DESCRIPTION_LABEL": "Description",
+    "DESCRIPTION_REQUIRED": "Ce champ est obligatoire!",
+    "SUBMIT_BUTTON": "Soumettre"
+  },
+    "PRODUCT_SECTION": {
+    "PRICE_LABEL": "Prix",
+    "CATEGORY_LABEL": "Catégorie",
+    "REVIEWS_SECTION_TITLE": "Avis des clients",
+    "FAQS_SECTION_TITLE": "Questions fréquemment posées",
+    "QUESTION_LABEL": "Question :",
+    "ANSWER_LABEL": "Réponse :",
+    "RATING_LABEL": "Évaluation",
+    "USERNAME_LABEL": "Nom d'utilisateur"
+  },
+    "ORDERED_PRODUCT_SECTION": {
+    "PRICE_LABEL": "Prix",
+    "QUANTITY_LABEL": "Quantité",
+    "TOTAL_LABEL": "Total",
+    "GIVE_REVIEW_BUTTON": "Donner un avis"
+  }
+
+}

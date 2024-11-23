@@ -1,35 +1,37 @@
 <div class="container">
     <mat-card>
-        <mat-card-title>Login</mat-card-title>
+        <mat-card-title>{{ 'LOGIN.TITLE' | translate }}</mat-card-title>
         <mat-card-content>
             <form [formGroup]="loginForm">
 
                 <mat-form-field appearance="outline">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput formControlName="email" placeholder="Email" required>
+                    <mat-label>{{ 'LOGIN.EMAIL_LABEL' | translate }}</mat-label>
+                    <input matInput formControlName="email" placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}" required>
                     <mat-error *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
-                        Please enter a valid email address.
+                        {{ 'LOGIN.EMAIL_ERROR' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
+                    <mat-label>{{ 'LOGIN.PASSWORD_LABEL' | translate }}</mat-label>
                     <input matInput type="{{ hidePassword ? 'password' : 'text' }}" formControlName="password"
-                        placeholder="Password" required>
+                        placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}" required>
                     <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" aria-label="Toggle password visibility">
                         <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
                     <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
-                        Please enter a valid password.
+                        {{ 'LOGIN.PASSWORD_ERROR' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid"
-                    (click)="onSubmit()" aria-label="Login">Login</button>
+                    (click)="onSubmit()" aria-label="Login">{{ 'LOGIN.SUBMIT_BUTTON' | translate }}</button>
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button color="accent" routerLink="/signup" aria-label="Sign Up">Don't have an account? Sign Up</button>
+            <button mat-button color="accent" routerLink="/signup" aria-label="Sign Up">
+                {{ 'LOGIN.SIGNUP_BUTTON' | translate }}
+            </button>
         </mat-card-actions>
     </mat-card>
 </div>

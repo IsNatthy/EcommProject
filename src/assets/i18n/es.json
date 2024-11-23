@@ -1,0 +1,278 @@
+{
+    "NAV": {
+      "ABOUT_US": "Nosotros",
+      "TRACK_ORDER": "Pedidos",
+      "REGISTER": "Registro",
+      "LOGIN": "Entrar",
+      "LOGOUT": "Salir",
+      "DASHBOARD": "Panel",
+      "ANALYTICS": "Análisis",
+      "CATEGORY": "Categoría",
+      "PRODUCT": "Producto",
+      "ORDERS": "Pedidos",
+      "POST_COUPON": "Crear",
+      "COUPONS": "Cupones",
+      "CART": "Carrito",
+      "WISHLIST": "Favoritos",
+      "PROFILE": "Perfil"
+    },
+    "ABOUT": {
+      "WELCOME": "Bienvenidos a Creart Acabados",
+      "SUBTITLE": "Excelencia artesanal desde Neiva, Colombia",
+      "HERITAGE": "Nuestra Herencia",
+      "HERITAGE_DESCRIPTION_1": "Ubicados en el corazón del Huila, Creart Acabados es un testimonio de la artesanía colombiana. Nos especializamos en crear objetos funcionales y estéticos que combinan técnicas artesanales tradicionales con principios de diseño moderno.",
+      "HERITAGE_DESCRIPTION_2": "Nuestros artesanos expertos vierten su creatividad y habilidad en cada pieza, asegurando que cada creación refleje nuestro compromiso con la calidad y la originalidad. Como orgullosos portadores de la certificación 'Sello Compra Lo Nuestro', representamos lo mejor de la producción colombiana."
+    },
+    "FEATURES": {
+      "HANDCRAFTED": "Hecho a mano",
+      "HANDCRAFTED_DESCRIPTION": "Cada pieza elaborada por artesanos expertos",
+      "MODERN_DESIGN": "Diseño Moderno",
+      "MODERN_DESIGN_DESCRIPTION": "Combinando tradición con estética contemporánea",
+      "LOCAL_PRIDE": "Orgullo Local",
+      "LOCAL_PRIDE_DESCRIPTION": "Orgullosamente hecho en Huila, Colombia"
+    },
+    "PRODUCTS": {
+      "OUR_CREATIONS": "Nuestras Creaciones",
+      "LATTICES_TITLE": "Celosías Decorativas",
+      "LATTICES_DESCRIPTION": "Celosías diseñadas a medida para divisiones elegantes",
+      "PLANTERS_TITLE": "Macetas Modernas",
+      "PLANTERS_DESCRIPTION": "Macetas elegantes para espacios interiores y exteriores",
+      "FLOWERPOTS_TITLE": "Materas Artesanales",
+      "FLOWERPOTS_DESCRIPTION": "Materas únicas hechas a mano para tu colección botánica",
+      "BOARDS_TITLE": "Tablas de Madera",
+      "BOARDS_DESCRIPTION": "Tablas de madera premium para servir y decorar",
+      "LOGIN_TO_SEE_ALL_PRODUCTS": "Inicia sesión para ver todos los productos"
+    },
+    "LOGIN": {
+      "TITLE": "Iniciar Sesión",
+      "EMAIL_LABEL": "Correo Electrónico",
+      "EMAIL_PLACEHOLDER": "Correo",
+      "EMAIL_ERROR": "Por favor ingresa una dirección de correo válida.",
+      "PASSWORD_LABEL": "Contraseña",
+      "PASSWORD_PLACEHOLDER": "Contraseña",
+      "PASSWORD_ERROR": "Por favor ingresa una contraseña válida.",
+      "SUBMIT_BUTTON": "Entrar",
+      "SIGNUP_BUTTON": "¿No tienes cuenta? Regístrate"
+    },
+    "SIGNUP": {
+      "TITLE": "Regístrate",
+      "NAME_LABEL": "Nombre",
+      "NAME_PLACEHOLDER": "Nombre",
+      "NAME_ERROR": "Por favor, introduce un nombre válido.",
+      "EMAIL_LABEL": "Correo Electrónico",
+      "EMAIL_PLACEHOLDER": "Correo Electrónico",
+      "EMAIL_ERROR": "Por favor, introduce una dirección de correo válida.",
+      "PASSWORD_LABEL": "Contraseña",
+      "PASSWORD_PLACEHOLDER": "Contraseña",
+      "PASSWORD_ERROR": "Por favor, introduce una contraseña válida.",
+      "CONFIRM_PASSWORD_LABEL": "Confirmar Contraseña",
+      "CONFIRM_PASSWORD_PLACEHOLDER": "Contraseña",
+      "CONFIRM_PASSWORD_ERROR": "Las contraseñas no coinciden.",
+      "SUBMIT_BUTTON": "Regístrate",
+      "LOGIN_BUTTON": "¿Ya tienes cuenta? Inicia sesión"
+    },
+    "TRACK_ORDER": {
+      "LABEL": "Ingresa el ID de rastreo para buscar",
+      "BUTTON": "Buscar",
+      "ERROR": "El ID de rastreo es obligatorio"
+    },
+    "ORDER_DETAILS": {
+      "TITLE": "Detalles del Pedido",
+      "TRACKING_ID": "ID de Rastreo",
+      "USER_NAME": "Nombre del Usuario",
+      "ADDRESS": "Dirección",
+      "AMOUNT": "Monto",
+      "STATUS": "Estado",
+      "DATE": "Fecha"
+    },
+    "ORDER_STATUS": {
+      "PLACED": "Colocado",
+      "SHIPPED": "Enviado",
+      "DELIVERED": "Entregado"
+    },
+    "ANALYTICS": {
+      "ORDERS": "Pedidos",
+      "CURRENT_MONTH": "Mes Actual",
+      "PREVIOUS_MONTH": "Mes Anterior",
+      "EARNINGS": "Ganancias"
+    },
+    "COUPON": {
+      "ID": "ID del cupón",
+      "NAME": "Nombre",
+      "DISCOUNT": "Descuento",
+      "CODE": "Código",
+      "EXPIRATION_DATE": "Fecha de expiración"
+    },
+    "DASHBOARD_ADMIN": {
+      "SEARCH_LABEL": "Ingrese una palabra clave para buscar",
+      "SEARCH_ERROR": "Se requiere una palabra clave",
+      "PRICE": "Precio",
+      "CATEGORY": "Categoría",
+      "FAQ": "FAQ",
+      "UPDATE": "Actualizar",
+      "DELETE": "Eliminar",
+      "EMPTY_MESSAGE": "No hay nada que mostrar."
+    },
+    "ORDER_ADMIN": {
+    "ORDERS_MANAGEMENT": "Gestión de Pedidos",
+    "TRACKING_ID": "ID de Seguimiento",
+    "USER_NAME": "Nombre del Usuario",
+    "AMOUNT": "Monto",
+    "DESCRIPTION": "Descripción",
+    "ADDRESS": "Dirección",
+    "DATE": "Fecha",
+    "STATUS": "Estado",
+    "ACTION": "Acción",
+    "SHIPPED": "Enviado",
+    "DELIVERED": "Entregado"
+    },
+    "ADD_CATEGORY": {
+    "TITLE": "Añadir Categoría",
+    "NAME_LABEL": "Nombre",
+    "NAME_PLACEHOLDER": "Nombre",
+    "DESCRIPTION_LABEL": "Descripción",
+    "DESCRIPTION_PLACEHOLDER": "Descripción",
+    "REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "ADD_BUTTON": "Añadir Categoría"
+    },
+    "ADD_COUPON": {
+    "TITLE": "Añadir Cupón",
+    "NAME_LABEL": "Nombre",
+    "NAME_PLACEHOLDER": "Nombre",
+    "CODE_LABEL": "Código",
+    "CODE_PLACEHOLDER": "Código",
+    "DISCOUNT_LABEL": "Descuento %",
+    "DISCOUNT_PLACEHOLDER": "Descuento",
+    "EXPIRATION_DATE_LABEL": "Fecha de Expiración",
+    "EXPIRATION_DATE_PLACEHOLDER": "Fecha de Expiración",
+    "REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "ADD_BUTTON": "Añadir Cupón",
+    "DATE_HINT": "MM/DD/AAAA"
+    },
+    "ADD_PRODUCT": {
+    "TITLE": "Añadir Producto",
+    "SELECT_FILE": "Seleccionar un Archivo",
+    "SELECT_CATEGORY_LABEL": "Seleccionar una Categoría",
+    "SELECT_CATEGORY_ERROR": "¡Este campo es obligatorio!",
+    "NAME_LABEL": "Nombre",
+    "NAME_PLACEHOLDER": "Nombre",
+    "PRICE_LABEL": "Precio",
+    "PRICE_PLACEHOLDER": "Precio",
+    "DESCRIPTION_LABEL": "Descripción",
+    "DESCRIPTION_PLACEHOLDER": "Descripción",
+    "REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "ADD_BUTTON": "Añadir Producto"
+    },
+    "POST_FAQ": {
+    "TITLE": "Publicar Pregunta Frecuente",
+    "QUESTION_LABEL": "Pregunta",
+    "QUESTION_PLACEHOLDER": "Pregunta",
+    "ANSWER_LABEL": "Respuesta",
+    "ANSWER_PLACEHOLDER": "Respuesta",
+    "REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "POST_BUTTON": "Publicar Pregunta Frecuente"
+    },
+    "UPDATE_PRODUCT": {
+    "TITLE": "Actualizar Producto",
+    "SELECT_FILE": "Seleccionar un Archivo",
+    "EXISTING_IMAGE_ALT": "Imagen Existente",
+    "CATEGORY_LABEL": "Seleccionar una Categoría",
+    "CATEGORY_REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "NAME_LABEL": "Nombre",
+    "NAME_REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "PRICE_LABEL": "Precio",
+    "PRICE_REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "DESCRIPTION_LABEL": "Descripción",
+    "DESCRIPTION_REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "UPDATE_BUTTON": "Actualizar Producto"
+    },
+    "CART": {
+    "TOTAL_AMOUNT": "Monto Total:",
+    "DISCOUNT": "Descuento:",
+    "AMOUNT": "Monto:",
+    "COUPON_APPLIED": "Cupón Aplicado:",
+    "PLACE_ORDER": "Realizar Pedido",
+    "CODE_LABEL": "Código",
+    "CODE_REQUIRED_ERROR": "¡Este campo es obligatorio!",
+    "APPLY_COUPON": "Aplicar Cupón",
+    "EMPTY_CART_MESSAGE": "Nada que ver aquí."
+    },
+    "CHANGE_PASSWORD": {
+    "TITLE": "Cambiar Contraseña",
+    "OLD_PASSWORD": "Contraseña Anterior",
+    "NEW_PASSWORD": "Nueva Contraseña",
+    "CONFIRM_PASSWORD": "Confirmar Contraseña",
+    "VALID_PASSWORD_ERROR": "Por favor ingresa una contraseña válida.",
+    "PASSWORD_MISMATCH_ERROR": "Las contraseñas no coinciden.",
+    "CHANGE_BUTTON": "Cambiar",
+    "PROFILE_UPDATE": "¿Quieres actualizar el perfil?"
+  },
+    "DASHBOARD_CLIENT": {
+    "SEARCH_KEYWORD": "Ingrese una palabra clave para buscar",
+    "KEYWORD_REQUIRED": "La palabra clave es requerida",
+    "PRICE_LABEL": "Precio:",
+    "CATEGORY_LABEL": "Categoría:",
+    "ADD_TO_CART": "Agregar al carrito",
+    "EMPTY_CART_MESSAGE": "No hay nada que ver aquí."
+  },
+    "PRODUCT_CARD": {
+    "PRICE_LABEL": "Precio:"
+  },
+    "MY_ORDERS": {
+    "TITLE": "Mis Pedidos",
+    "TRACKING_ID": "ID de seguimiento",
+    "AMOUNT": "Monto",
+    "DESCRIPTION": "Descripción",
+    "ADDRESS": "Dirección",
+    "DATE": "Fecha",
+    "STATUS": "Estado",
+    "ACTION": "Acción",
+    "REVIEW": "Reseñar"
+  },
+    "PLACE_ORDER": {
+    "TITLE": "Realizar Pedido",
+    "ADDRESS": "Dirección",
+    "DESCRIPTION": "Descripción",
+    "ORDER_BUTTON": "Ordenar",
+    "CLOSE_BUTTON": "Cerrar",
+    "REQUIRED_INPUT": "¡Este campo es obligatorio!"
+  },
+    "PROFILE": {
+    "EMAIL_LABEL": "Correo Electrónico",
+    "NAME_LABEL": "Nombre",
+    "REQUIRED_INPUT": "¡Este campo es obligatorio!",
+    "SAVE_BUTTON": "Guardar",
+    "CHANGE_PASSWORD_BUTTON": "¿Quieres cambiar la contraseña?"
+  },
+    "REVIEW_FORM": {
+    "SELECT_FILE": "Seleccionar un archivo",
+    "RATING_LABEL": "Calificación",
+    "RATING_OPTION_1": "1 Estrella",
+    "RATING_OPTION_2": "2 Estrellas",
+    "RATING_OPTION_3": "3 Estrellas",
+    "RATING_OPTION_4": "4 Estrellas",
+    "RATING_OPTION_5": "5 Estrellas",
+    "RATING_REQUIRED": "¡Por favor seleccione una calificación!",
+    "DESCRIPTION_LABEL": "Descripción",
+    "DESCRIPTION_REQUIRED": "¡Este campo es obligatorio!",
+    "SUBMIT_BUTTON": "Enviar"
+  },
+    "PRODUCT_SECTION": {
+    "PRICE_LABEL": "Precio",
+    "CATEGORY_LABEL": "Categoría",
+    "REVIEWS_SECTION_TITLE": "Reseñas de los clientes",
+    "FAQS_SECTION_TITLE": "Preguntas frecuentes",
+    "QUESTION_LABEL": "Pregunta:",
+    "ANSWER_LABEL": "Respuesta:",
+    "RATING_LABEL": "Calificación",
+    "USERNAME_LABEL": "Usuario"
+  },
+    "ORDERED_PRODUCT_SECTION": {
+    "PRICE_LABEL": "Precio",
+    "QUANTITY_LABEL": "Cantidad",
+    "TOTAL_LABEL": "Total",
+    "GIVE_REVIEW_BUTTON": "Dar Reseña"
+  }
+
+}
+  

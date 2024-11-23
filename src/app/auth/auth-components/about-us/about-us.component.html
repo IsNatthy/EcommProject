@@ -1,49 +1,64 @@
 <section class="about-container">
   <div class="hero">
-    <h1>Welcome to Creart Acabados</h1>
-    <p class="subtitle">Handcrafted Excellence from Neiva, Colombia</p>
+    <h1>{{ 'ABOUT.WELCOME' | translate }}</h1>
+    <p class="subtitle">{{ 'ABOUT.SUBTITLE' | translate }}</p>
   </div>
 
   <div class="content-section">
     <div class="text-content">
-      <h2>Our Heritage</h2>
-      <p>Nestled in the heart of Huila, Creart Acabados stands as a testament to Colombian craftsmanship. We specialize in creating functional and aesthetic objects that blend traditional artisanal techniques with modern design principles.</p>
-      <p>Our expert artisans pour their creativity and skill into every piece, ensuring each creation reflects our commitment to quality and originality. As proud holders of the "Sello Compra Lo Nuestro" certification, we represent the finest of Colombian production.</p>
+      <h2>{{ 'ABOUT.HERITAGE' | translate }}</h2>
+      <p>{{ 'ABOUT.HERITAGE_DESCRIPTION_1' | translate }}</p>
+      <p>{{ 'ABOUT.HERITAGE_DESCRIPTION_2' | translate }}</p>
     </div>
 
     <div class="features">
       <div class="feature">
         <i class="feature-icon handcraft"></i>
-        <h3>Handcrafted</h3>
-        <p>Every piece crafted by expert artisans</p>
+        <h3>{{ 'FEATURES.HANDCRAFTED' | translate }}</h3>
+        <p>{{ 'FEATURES.HANDCRAFTED_DESCRIPTION' | translate }}</p>
       </div>
       <div class="feature">
         <i class="feature-icon design"></i>
-        <h3>Modern Design</h3>
-        <p>Blending tradition with contemporary aesthetics</p>
+        <h3>{{ 'FEATURES.MODERN_DESIGN' | translate }}</h3>
+        <p>{{ 'FEATURES.MODERN_DESIGN_DESCRIPTION' | translate }}</p>
       </div>
       <div class="feature">
         <i class="feature-icon local"></i>
-        <h3>Local Pride</h3>
-        <p>Proudly made in Huila, Colombia</p>
+        <h3>{{ 'FEATURES.LOCAL_PRIDE' | translate }}</h3>
+        <p>{{ 'FEATURES.LOCAL_PRIDE_DESCRIPTION' | translate }}</p>
       </div>
     </div>
   </div>
 
   <div class="products-showcase">
-    <h2>Our Creations</h2>
+    <h2>{{ 'PRODUCTS.OUR_CREATIONS' | translate }}</h2>
     <div class="products-grid">
-      <div class="product-card" *ngFor="let product of products">
-        <img [src]="product.image" [alt]="product.title" class="product-image">
-        <h3>{{product.title}}</h3>
-        <p>{{product.description}}</p>
+      <div class="product-card">
+        <img src="assets/img/celosia.jpg" alt="Decorative Lattices" class="product-image">
+        <h3>{{ 'PRODUCTS.LATTICES_TITLE' | translate }}</h3>
+        <p>{{ 'PRODUCTS.LATTICES_DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="product-card">
+        <img src="assets/img/maceta.jpg" alt="Modern Planters" class="product-image">
+        <h3>{{ 'PRODUCTS.PLANTERS_TITLE' | translate }}</h3>
+        <p>{{ 'PRODUCTS.PLANTERS_DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="product-card">
+        <img src="assets/img/jarron.jpg" alt="Artisanal Flowerpots" class="product-image">
+        <h3>{{ 'PRODUCTS.FLOWERPOTS_TITLE' | translate }}</h3>
+        <p>{{ 'PRODUCTS.FLOWERPOTS_DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="product-card">
+        <img src="assets/img/tabla.jpg" alt="Wooden Boards" class="product-image">
+        <h3>{{ 'PRODUCTS.BOARDS_TITLE' | translate }}</h3>
+        <p>{{ 'PRODUCTS.BOARDS_DESCRIPTION' | translate }}</p>
       </div>
     </div>
   </div>
 
   <div class="view-more">
     <a *ngIf="!isCustomerLoggedIn" routerLink="/login" class="view-more-link">
-      Login to See All Products
+      {{ 'PRODUCTS.LOGIN_TO_SEE_ALL_PRODUCTS' | translate }}
     </a>
   </div>
 </section>

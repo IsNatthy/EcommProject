@@ -1,56 +1,58 @@
 <div class="container">
     <mat-card>
-        <mat-card-title>Sign Up</mat-card-title>
+        <mat-card-title>{{ 'SIGNUP.TITLE' | translate }}</mat-card-title>
         <mat-card-content>
             <form [formGroup]="signupForm">
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Name</mat-label>
-                    <input matInput formControlName="name" placeholder="Name" required>
+                    <mat-label>{{ 'SIGNUP.NAME_LABEL' | translate }}</mat-label>
+                    <input matInput formControlName="name" placeholder="{{ 'SIGNUP.NAME_PLACEHOLDER' | translate }}" required>
                     <mat-error *ngIf="signupForm.get('name').invalid && signupForm.get('name').touched">
-                        Please enter a valid name.
+                        {{ 'SIGNUP.NAME_ERROR' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput formControlName="email" placeholder="E-mail" required>
+                    <mat-label>{{ 'SIGNUP.EMAIL_LABEL' | translate }}</mat-label>
+                    <input matInput formControlName="email" placeholder="{{ 'SIGNUP.EMAIL_PLACEHOLDER' | translate }}" required>
                     <mat-error *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">
-                        Please enter a valid email address.
+                        {{ 'SIGNUP.EMAIL_ERROR' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
+                    <mat-label>{{ 'SIGNUP.PASSWORD_LABEL' | translate }}</mat-label>
                     <input matInput type="{{ hidePassword ? 'password' : 'text' }}" formControlName="password"
-                        placeholder="Password" required>
+                        placeholder="{{ 'SIGNUP.PASSWORD_PLACEHOLDER' | translate }}" required>
                     <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
                         <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
                     <mat-error *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">
-                        Please enter a valid password.
+                        {{ 'SIGNUP.PASSWORD_ERROR' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Confirm Password</mat-label>
+                    <mat-label>{{ 'SIGNUP.CONFIRM_PASSWORD_LABEL' | translate }}</mat-label>
                     <input matInput type="{{ hidePassword ? 'password' : 'text' }}" formControlName="confirmPassword"
-                        placeholder="Password" required>
+                        placeholder="{{ 'SIGNUP.CONFIRM_PASSWORD_PLACEHOLDER' | translate }}" required>
                     <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
                         <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
                     <mat-error
                         *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">
-                        Password do not match.
+                        {{ 'SIGNUP.CONFIRM_PASSWORD_ERROR' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid"
-                    (click)="onSubmit()">Sign Up</button>
+                    (click)="onSubmit()">{{ 'SIGNUP.SUBMIT_BUTTON' | translate }}</button>
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button color="primary" routerLink="/login">Already have an account? Login</button>
+            <button mat-button color="primary" routerLink="/login">
+                {{ 'SIGNUP.LOGIN_BUTTON' | translate }}
+            </button>
         </mat-card-actions>
     </mat-card>
 </div>

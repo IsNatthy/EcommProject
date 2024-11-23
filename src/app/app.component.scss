@@ -109,6 +109,10 @@ button[mat-button] {
   min-width: auto;
   line-height: 1;
   transition: all 0.3s ease;
+  height: 36px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
   
   &:hover {
     color: $primary-color;
@@ -174,4 +178,93 @@ button[mat-button] {
 .navbar-logo {
   height: 40px;
   width: auto;
+}
+
+// Actualiza los estilos del selector de idiomas
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.language-select {
+  margin-left: 1rem;
+  width: 100px; // Aumentado para dar más espacio al contenido
+  
+  ::ng-deep {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      margin: 0;
+    }
+    
+    .mat-form-field-underline {
+      display: none;
+    }
+    
+    .mat-form-field-infix {
+      border-top: 0;
+      padding: 0;
+      width: 100px;
+      min-height: 32px; // Reducido de 36px a 32px
+      padding-left: 4px;
+    }
+    
+    .mat-form-field-flex {
+      background-color: transparent;
+      align-items: center;
+      min-height: 32px; // Reducido
+      padding: 0 8px 0 0;
+    }
+    
+    .mat-select-value {
+      padding-left: 0;
+    }
+  }
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; // Aumentado el espacio entre bandera y texto
+  padding-left: 0;
+  margin-left: -4px;
+  
+  .flag-icon {
+    width: 20px;
+    height: 10px;
+    object-fit: cover;
+  }
+  
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.813rem;
+    text-transform: uppercase;
+    margin-right: 8px; // Más espacio para la flecha
+  }
+}
+
+::ng-deep .mat-select-panel {
+  min-width: 100px !important; // Coincide con el nuevo ancho
+  
+  .mat-option {
+    height: 28px; // Reducido para hacer las opciones más compactas
+    min-height: 28px;
+    line-height: 28px;
+    
+    .language-option {
+      padding-left: 4px;
+      
+      .flag-icon {
+        width: 20px;
+        height: 10px;
+      }
+    }
+    
+    &.mat-selected {
+      background-color: rgba(43, 124, 162, 0.04);
+    }
+    
+    &:hover {
+      background-color: rgba(43, 124, 162, 0.04);
+    }
+  }
 }
