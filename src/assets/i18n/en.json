@@ -104,6 +104,7 @@
       "EXPIRATION_DATE": "Expiration Date"
     },
     "DASHBOARD_ADMIN": {
+      "SEARCH_BUTTON": "Search products",
       "SEARCH_LABEL": "Enter Keyword to search",
       "SEARCH_ERROR": "Keyword is required",
       "PRICE": "Price",
@@ -195,7 +196,10 @@
     "CODE_LABEL": "Code",
     "CODE_REQUIRED_ERROR": "This input is required!",
     "APPLY_COUPON": "Apply Coupon",
-    "EMPTY_CART_MESSAGE": "Nothing to see here."
+    "EMPTY_CART_MESSAGE": "Nothing to see here.",
+    "DECREASE_QUANTITY": "Decrease quantity",
+    "INCREASE_QUANTITY": "Increase quantity",
+    "QUANTITY": "Current quantity"
     },
     "CHANGE_PASSWORD": {
     "TITLE": "Change Password",
@@ -208,6 +212,7 @@
     "PROFILE_UPDATE": "Want to update the Profile?"
   },
     "DASHBOARD_CLIENT": {
+    "SEARCH_BUTTON": "Search products",
     "SEARCH_KEYWORD": "Enter Keyword to search",
     "KEYWORD_REQUIRED": "Keyword is required",
     "PRICE_LABEL": "Price:",

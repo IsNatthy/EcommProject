@@ -104,6 +104,7 @@
       "EXPIRATION_DATE": "Fecha de expiración"
     },
     "DASHBOARD_ADMIN": {
+      "SEARCH_BUTTON": "Buscar productos",
       "SEARCH_LABEL": "Ingrese una palabra clave para buscar",
       "SEARCH_ERROR": "Se requiere una palabra clave",
       "PRICE": "Precio",
@@ -195,7 +196,10 @@
     "CODE_LABEL": "Código",
     "CODE_REQUIRED_ERROR": "¡Este campo es obligatorio!",
     "APPLY_COUPON": "Aplicar Cupón",
-    "EMPTY_CART_MESSAGE": "Nada que ver aquí."
+    "EMPTY_CART_MESSAGE": "Nada que ver aquí.",
+    "DECREASE_QUANTITY": "Disminuir cantidad",
+    "INCREASE_QUANTITY": "Aumentar cantidad",
+    "QUANTITY": "Cantidad actual"
     },
     "CHANGE_PASSWORD": {
     "TITLE": "Cambiar Contraseña",
@@ -208,6 +212,7 @@
     "PROFILE_UPDATE": "¿Quieres actualizar el perfil?"
   },
     "DASHBOARD_CLIENT": {
+    "SEARCH_BUTTON": "Buscar productos",
     "SEARCH_KEYWORD": "Ingrese una palabra clave para buscar",
     "KEYWORD_REQUIRED": "La palabra clave es requerida",
     "PRICE_LABEL": "Precio:",
