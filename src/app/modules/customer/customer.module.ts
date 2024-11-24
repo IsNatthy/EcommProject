@@ -24,7 +24,18 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [DashboardComponent, CartItemsComponent, OrderPlaceComponent, MyPlaceOrdersComponent, ViewOrderedProductsForReviewComponent, ReviewOrderedProductComponent, ViewCompleteProductDetailComponent, GetMyWishlistComponent, ProfileComponent, ChangePasswordComponent, ImgDialogComponent],
+  declarations: [
+    DashboardComponent, 
+    CartItemsComponent, 
+    OrderPlaceComponent, 
+    MyPlaceOrdersComponent, 
+    ViewOrderedProductsForReviewComponent, 
+    ReviewOrderedProductComponent, 
+    ViewCompleteProductDetailComponent, 
+    GetMyWishlistComponent, 
+    ProfileComponent, 
+    ChangePasswordComponent, 
+    ImgDialogComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,
