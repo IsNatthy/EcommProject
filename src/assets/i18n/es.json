@@ -277,6 +277,11 @@
     "QUANTITY_LABEL": "Cantidad",
     "TOTAL_LABEL": "Total",
     "GIVE_REVIEW_BUTTON": "Dar Reseña"
+  },
+    "WHATSAPP": {
+    "ORDER": "Hola, mi nombre es... y quiero conocer más sobre la orden que hice.",
+    "MESSAGE": "Hola, mi nombre es... y estoy interesado/a en...",
+    "PAYMENT": "Hola, mi nombre es... y quiero conocer los métodos de pago."
   }
 
 }
