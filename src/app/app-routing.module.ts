@@ -7,11 +7,11 @@ import { AboutUsComponent } from './auth/auth-components/about-us/about-us.compo
 import { NoAuthGuard } from './auth/auth-guards/no-auth/no-auth.guard';
 
 const routes: Routes = [
-  { path: '', component: AboutUsComponent, canActivate: [NoAuthGuard] },
+  { path: '', component: AboutUsComponent },
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [NoAuthGuard] },
   { path: 'order', component: TrackOrderComponent, canActivate: [NoAuthGuard] },
-  { path: 'about-us', component: AboutUsComponent, canActivate: [NoAuthGuard] },
+  { path: 'about-us', component: AboutUsComponent },
   { path: 'customer', loadChildren: () => import('./modules/customer/customer.module').then(m => m.CustomerModule) }, 
   { path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) }];
 

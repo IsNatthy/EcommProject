@@ -11,14 +11,13 @@ $error-color: #dc3545;
 $mobile: 576px;
 $tablet: 768px;
 $desktop: 992px;
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -29,8 +28,7 @@ $desktop: 992px;
   padding: 2rem;
   font-family: 'Montserrat', sans-serif;
   color: $secondary-gray-dark;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .hero {
@@ -43,13 +41,11 @@ $desktop: 992px;
     color: $primary-color;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    animation: fadeIn 0.8s ease-out 0.3s forwards;
   }
   
   .subtitle {
     color: $secondary-gray-light;
     font-size: 1.2rem;
-    animation: fadeIn 0.8s ease-out 0.5s forwards;
   }
 }
 
@@ -67,7 +63,6 @@ $desktop: 992px;
 
 .text-content {
   margin-bottom: 3rem;
-  animation: fadeIn 1s ease-out 0.7s forwards;
 
   h2 {
     color: $primary-color;
@@ -93,11 +88,7 @@ $desktop: 992px;
     background: $white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    animation: scaleIn 0.6s ease-out forwards;
-
-    &:nth-child(1) { animation-delay: 1s; }
-    &:nth-child(2) { animation-delay: 1.2s; }
-    &:nth-child(3) { animation-delay: 1.4s; }
+    animation: fadeIn 0.5s ease-out;
 
     h3 {
       color: $primary-color;
@@ -115,6 +106,7 @@ $desktop: 992px;
 .products-showcase {
   margin-top: 4rem;
   text-align: center;
+  animation: fadeIn 0.5s ease-out;
 
   h2 {
     color: $primary-color;
@@ -187,7 +179,6 @@ $desktop: 992px;
     &:hover {
       background-color: $primary-color;
       color: $white;
-      transform: translateY(-2px);
     }
   }
 }
