@@ -10,7 +10,7 @@ import { ViewCompleteProductDetailComponent } from './components/view-complete-p
 import { GetMyWishlistComponent } from './components/get-my-wishlist/get-my-wishlist.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { CustomerGuard } from 'src/app/auth/auth-guards/auth-austomer/customer.guard';
+import { CustomerGuard } from 'src/app/auth/auth-guards/auth-customer/customer.guard';
 import { AboutUsComponent } from 'src/app/auth/auth-components/about-us/about-us.component';
 
 const routes: Routes = [
